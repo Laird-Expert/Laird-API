@@ -1,4 +1,4 @@
-# Workflow Types
+# Workflow Types JSON
 
 This will advise you on the workflow type (report type) that is avalible to your account.
 
