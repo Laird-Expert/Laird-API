@@ -2,7 +2,7 @@
 
 This will advise you on the status of your case
 
-You will need to provide the task ID that you originally recenived when you submitted the task.
+You will need to provide the task ID that you originally recived when you submitted the task.
 
 *  This is a **GET** request
 
