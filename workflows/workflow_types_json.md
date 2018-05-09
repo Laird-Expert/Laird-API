@@ -2,7 +2,7 @@
 
 This will advise you on the workflow type (report type) that is avalible to your account.
 
-[*] this is a GET request
+*  This is a **GET** request
 
 Example Request
 ------
