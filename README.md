@@ -22,3 +22,11 @@ Live Endpoint
 ```
 TBC
 ```
+
+
+Getting Started
+-------
+
+Once you have your API keys you will need to work out all the different report types.
+
+[Grab Workflow IDs](https://github.com/Laird-Expert/Laird-API/blob/master/workflows/workflow_types_json.md)
