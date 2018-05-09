@@ -1,4 +1,4 @@
-# Create a Task
+# Create a Task JSON
 
 Once you have the workflow type id and you have got all the questions that this workflow requires you can submit a post request like the following and it will return with your task id & internal reference (Laird Reference).
 
@@ -11,6 +11,10 @@ Notes
 3. Dates are in UTC format yyyy-mm-dd
 
 4. Workflow ID is required and is the type of report you wish us to do.
+
+5. Task User is the Laird Assessors member of staff the case has been automatically sent to. (This may change depending on staff avaliablity)
+
+6. Status is us acknowledging we have rececived the instruction.
 
 *  This is a **POST** request
 
