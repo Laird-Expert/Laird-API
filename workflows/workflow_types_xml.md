@@ -1,4 +1,4 @@
-# Workflow Types JSON
+# Workflow Types XML
 
 This will advise you on the workflow type (report type) that is avalible to your account.
 
@@ -10,7 +10,7 @@ Example Request
 ------
 
 ```
-GET /api/v2/YOURAPIKEY/workflows.xmlHTTP/1.1
+GET /api/v2/YOURAPIKEY/workflows.xml HTTP/1.1
 Host: test2-lairdassessors.swiftcase.co.uk
 Cache-Control: no-cache
 ```
