@@ -2,6 +2,8 @@
 
 This will advise you on the workflow type (report type) that is avalible to your account.
 
+The ID's for your account could be different from the ones shown here.
+
 *  This is a **GET** request
 
 Example Request
