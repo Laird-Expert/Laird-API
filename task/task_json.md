@@ -1,8 +1,16 @@
-# Workflow Types JSON
+# Create a Task
 
-This will advise you on the workflow type (report type) that is avalible to your account.
+Once you have the workflow type id and you have got all the questions that this workflow requires you can submit a post request like the following and it will return with your task id & internal reference (Laird Reference).
 
-The ID's for your account could be different from the ones shown here.
+Notes
+----
+1. The returned id is the task ID
+
+2. Internal Rerfence is the Laird Assessors Rerference.
+
+3. Dates are in UTC format yyyy-mm-dd
+
+4. Workflow ID is required and is the type of report you wish us to do.
 
 *  This is a **POST** request
 
@@ -10,7 +18,7 @@ Example Request
 ------
 
 ```
-POST /api/v2/4ca7667733bd971fe994b7e388f1909b/task.json HTTP/1.1
+POST /api/v2/YOURAPIKEY/task.json HTTP/1.1
 Host: test2-lairdassessors.swiftcase.co.uk
 Content-Type: application/json
 Cache-Control: no-cache
