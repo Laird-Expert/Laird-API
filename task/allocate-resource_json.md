@@ -13,6 +13,8 @@ You need to submit the following:
 *  Date in UTC format
 
 
+Example Request
+-----
 
 ```
 POST /api/v2/YOURAPIKEY/task/TASKID/allocate-resource.json HTTP/1.1
@@ -30,12 +32,14 @@ Host: test2-lairdassessors.swiftcase.co.uk
 }
 ```
 
-
+Example Response
+-----
 
 ```
 "Resource allocated."
 ```
 
-
+Notes
+----
 
 NOTE: 204 No Content means there has been an error and nothing has been booked.
