@@ -1,5 +1,18 @@
+# allocate-resource JSON
 
-ID - is taken from avaliblity resources.
+Allocate resource is where you would book a engineer for a physical inspection.
+
+*  This is a **POST** request
+
+You need to submit the following:
+---
+
+*  API Key
+*  TaskID
+*  ID is taken from avaliblity resources.
+*  Date in UTC format
+
+
 
 ```
 POST /api/v2/YOURAPIKEY/task/TASKID/allocate-resource.json HTTP/1.1
