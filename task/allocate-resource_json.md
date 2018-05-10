@@ -42,4 +42,6 @@ Example Response
 Notes
 ----
 
-NOTE: 204 No Content means there has been an error and nothing has been booked.
+If you get a HTTP status code of 204 this means there has been an error and the inspection has not been booked for that date.
+
+If you require a specific date and get this result please contact the our logistics department to arrange the inspection.
