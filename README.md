@@ -39,7 +39,7 @@ Once you have your API keys you will need to work out all the different report t
 
 [Create a Task](https://github.com/Laird-Expert/Laird-API/blob/master/task/task_json.md) -JSON
 
-[Create a Task] (https://github.com/Laird-Expert/Laird-API/blob/master/task/task_xml.md) - XML
+[Create a Task](https://github.com/Laird-Expert/Laird-API/blob/master/task/task_xml.md) - XML
 
 [Check Status](https://github.com/Laird-Expert/Laird-API/blob/master/task/status_json.md) - JSON
 
