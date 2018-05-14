@@ -4,7 +4,7 @@ Examples for the Laird Assessors API
 
 Please note all examples will have YOURAPIKEY which is where you need to replace that with your actual API key.
 
-API's will be provided to you on request and you will be provided with a test and live api key.
+API Keys will be provided to you on request and you will be provided with a test and live api key.
 
 The API will support request and responses in JSON or XML format.
 
@@ -64,5 +64,20 @@ Once you have your API keys you will need to work out all the different report t
 [Grab File](https://github.com/Laird-Expert/Laird-API/blob/master/file/get_file_json.md) - JSON
 
 [Grab File](https://github.com/Laird-Expert/Laird-API/blob/master/file/get_file_xml.md) - XML
+
+Workflow
+----
+
+1. Get ID of report (workflow)
+2. Get Questions for submission of report (workflow questions)
+3. Submit details (submit task)
+4. if physical inspection
+   Check avaliablity
+   allocate resource
+5. check status
+6. task details (details of the inspection/report)
+7. list files
+8. grab file (grab images and report)
+
 
 
