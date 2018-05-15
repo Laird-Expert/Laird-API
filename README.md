@@ -67,19 +67,8 @@ Once you have your API keys you will need to work out all the different report t
 
 [Grab File](https://github.com/Laird-Expert/Laird-API/blob/master/file/get_file_xml.md) - XML
 
-Workflow
+Workflow Example for VDAR (Physical Inspection)
 ----
-
-1. Get ID of report (workflow)
-2. Get Questions for submission of report (workflow questions)
-3. Submit details (submit task)
-4. if physical inspection
-   Check avaliablity
-   allocate resource
-5. check status
-6. task details (details of the inspection/report)
-7. list files
-8. grab file (grab images and report)
 
 [![VDAR](https://s31.postimg.cc/wxd1cuqyj/Capture.png)](https://postimg.cc/image/hon3z2x9z/)
 
