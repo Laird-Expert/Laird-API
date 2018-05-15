@@ -34,6 +34,8 @@ Host: test2-lairdassessors.swiftcase.co.uk
 
 Example Response
 -----
+HTTP 201 will be the HTTP status code
+
 
 ```
 "Resource allocated."
