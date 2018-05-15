@@ -22,9 +22,6 @@ Host: test2-lairdassessors.swiftcase.co.uk
 ```
 
 
-
-```
-
 Example Response
 -----
 
