@@ -8,6 +8,8 @@ API Keys will be provided to you on request and you will be provided with a test
 
 The API will support request and responses in JSON or XML format.
 
+Documentation from swiftcase - [Google Docs](https://docs.google.com/document/d/1K12qIap1dvEQLvJigxjzOE5EH9VgYWicSsTfFjpKn0M/edit?ts=5afa9b0f)
+
 
 Test Endpoint
 ----
