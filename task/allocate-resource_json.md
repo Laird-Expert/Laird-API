@@ -19,26 +19,26 @@ Example Request
 ```
 POST /api/v2/YOURAPIKEY/task/TASKID/allocate-resource.json HTTP/1.1
 Host: test2-lairdassessors.swiftcase.co.uk
+```
 
 
 
-{
-    "id": 29965,
-    "resource_availabilities": [
-        {
-            "date": "2018-05-14"
-        }
-    ]
-}
 ```
 
 Example Response
 -----
-HTTP 201 will be the HTTP status code
 
 
 ```
-"Resource allocated."
+HTTP/1.1 201 Created
+Server: nginx
+Content-Type: application/json
+Connection: close
+X-Powered-By: PHP/7.0.30
+Cache-Control: max-age=0, must-revalidate, private
+Date: Tue, 15 May 2018 14:14:26 GMT
+Strict-Transport-Security: max-age=31536000;
+Content-Length: 0
 ```
 
 Notes
