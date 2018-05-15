@@ -81,5 +81,7 @@ Workflow
 7. list files
 8. grab file (grab images and report)
 
+[physical](https://postimg.cc/image/hon3z2x9z/)
+
 
 
