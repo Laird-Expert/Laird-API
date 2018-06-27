@@ -18,6 +18,10 @@ Notes
 
 7. Not all questions need to be sent over but please send us all fields that can be filled in by yourself so that we can proceed quicker.
 
+8. HTTP 201 confirms the request was successful
+
+9. Inspection address and vehicle registration have to be passed with json object stings see example as there are additonal fields for these special keys.
+
 *  This is a **POST** request
 
 Example Request
