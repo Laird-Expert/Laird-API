@@ -26,109 +26,108 @@ Example Request
 ```
 POST /api/v2/YOURAPIKEY/task.json HTTP/1.1
 Content-Type: application/json
-User-Agent: API DEMO
+cache-control: no-cache
+User-Agent: PostmanRuntime/7.1.1
 Accept: */*
 Host: test2-lairdassessors.swiftcase.co.uk
 Accept-Encoding: gzip, deflate
 Connection: close
 
 {
-   "workflow_type_id": 70,
-   "data" : [
-        
-        {
-            "value": "Principal Reference",
-            "name": "principal_reference"
-        },
-        {
-            "value": "2018-01-01",
-            "name": "accident_date"
-        },
-        {
-            "value": "01513429961",
-            "name": "inspection_contact_phone"
-        },
-        {
-            "value": "0777777777",
-            "name": "inspection_contact_mobile"
-        },
-        {
-            "value": "Ring 2hrs before arrival",
-            "name": "agent_special_instructions"
-        },
-        {
-            "value": "Important Client",
-            "name": "principal_comments"
-        },
-        {
-            "value": "Rear",
-            "name": "area_of_damage_to_vehicle_reported"
-        },
-        {
-            "value": "Car has been in previouse accident on 17th may 2017 and was repaired",
-            "name": "agent_important_special_instructions"
-        },
-        {
-            "value": "MD accident management",
-            "name": "file_referrer"
-        },
-        {
-            "value": "Mr",
-            "name": "client_salutation"
-        },
-        {
-            "value": "Lee",
-            "name": "client_first_value"
-        },
-        {
-            "value": "Baty",
-            "name": "client_second_value"
-        },
-        {
-            "value": "CH607RJ",
-            "name": "client_postcode"
-        },
-        {
-            "value": "lee.baty@laird-assessors.com",
-            "name": "client_email_address"
-        },
-        {
-            "value": "01513429961",
-            "name": "client_daytime_phone"
-        },
-        {
-            "value": "01513429961",
-            "name": "client_evening_phone"
-        },
-        {
-            "value": "0777777777",
-            "name": "client_mobile"
-        },
-        {
-            "value": "VIP",
-            "name": "client_phone_notes"
-        },
-        {
-            "value": "Lee Baty",
-            "name": "contact_for_inspection"
-        },
-        {
-            "value": "Laird Assesors 188 - 200 Whitfield Buildings,heswall,wirral",
-            "name": "inspection_address"
-        },
-        {
-            "value": "W705ACW",
-            "name": "vehicle_registration"
-        },
-        {
-            "value": "In Use",
-            "name": "on_site_in_use"
-        }
-     
+	"workflow_type_id": 70,
+	"data": [{
+			"name": "client_staff_email",
+			"value": "user@sols.com"
+		},
+		{
+			"name": "principal_reference",
+			"value": "reference"
+		},
+		{
+			"name": "inspection_contact_phone",
+			"value": "inspection-phone"
+		},
+		{
+			"name": "contact_for_inspection",
+			"value": "inspection-contact-name"
+		},
+		{
+			"name": "accident_date",
+			"value": "accident-date"
+		},
+		{
+			"name": "area_of_damage_to_vehicle_reported",
+			"value": "area-of-damage"
+		},
+		{
+			"name": "inspection_address",
+			"value": "{\"postcode\":\"CH47 4BP\",\"first_line\":\"188 - 200 Whitfield Buildings\",\"second_line\":\"Pensby\",\"town\":\"Pensby\",\"county\":\"Wirral\"}"
+		},
+		{
+			"name": "vehicle_registration",
+			"value": "{\"registration\":\"YR57AEJ\",\"vin\":\"WF0BXXBAJBYT66489\",\"make\":\"Ford\",\"model\":\"Fiesta Freestyle\",\"type\":\"Five door hatchback\",\"colour\":\"Black\"}"
+		},
 
-         
-
-
+		{
+			"value": "Ring 2hrs before arrival",
+			"name": "agent_special_instructions"
+		},
+		{
+			"value": "Important Client",
+			"name": "principal_comments"
+		},
+		{
+			"value": "Rear",
+			"name": "area_of_damage_to_vehicle_reported"
+		},
+		{
+			"value": "Car has been in previouse accident on 17th may 2017 and was repaired",
+			"name": "agent_important_special_instructions"
+		},
+		{
+			"value": "MD accident management",
+			"name": "file_referrer"
+		},
+		{
+			"value": "Mr",
+			"name": "client_salutation"
+		},
+		{
+			"value": "Lee",
+			"name": "client_first_value"
+		},
+		{
+			"value": "Baty",
+			"name": "client_second_value"
+		},
+		{
+			"value": "CH607RJ",
+			"name": "client_postcode"
+		},
+		{
+			"value": "lee.baty@laird-assessors.com",
+			"name": "client_email_address"
+		},
+		{
+			"value": "01513429961",
+			"name": "client_daytime_phone"
+		},
+		{
+			"value": "01513429961",
+			"name": "client_evening_phone"
+		},
+		{
+			"value": "0777777777",
+			"name": "client_mobile"
+		},
+		{
+			"value": "VIP",
+			"name": "client_phone_notes"
+		},
+		{
+			"value": "Lee Baty",
+			"name": "contact_for_inspection"
+		}
 	]
 }
 ```
@@ -137,125 +136,16 @@ Example Response
 --------
 
 ```
-{
-  "id": 700168,
-  "data": [
-    {
-      "name": "principal_reference",
-      "value": "Principal Reference"
-    },
-    {
-      "name": "accident_date",
-      "value": ""
-    },
-    {
-      "name": "inspection_contact_phone",
-      "value": "01513429961"
-    },
-    {
-      "name": "inspection_contact_mobile",
-      "value": "0777777777"
-    },
-    {
-      "name": "agent_special_instructions",
-      "value": "Ring 2hrs before arrival"
-    },
-    {
-      "name": "principal_comments",
-      "value": "Important Client"
-    },
-    {
-      "name": "area_of_damage_to_vehicle_reported",
-      "value": "Rear"
-    },
-    {
-      "name": "agent_important_special_instructions",
-      "value": "Car has been in previouse accident on 17th may 2017 and was repaired"
-    },
-    {
-      "name": "file_referrer",
-      "value": "MD accident management"
-    },
-    {
-      "name": "client_salutation",
-      "value": "Mr"
-    },
-    {
-      "name": "client_postcode",
-      "value": "C"
-    },
-    {
-      "name": "client_email_address",
-      "value": "lee.baty@laird-assessors.com"
-    },
-    {
-      "name": "client_daytime_phone",
-      "value": "01513429961"
-    },
-    {
-      "name": "client_evening_phone",
-      "value": "01513429961"
-    },
-    {
-      "name": "client_mobile",
-      "value": "0777777777"
-    },
-    {
-      "name": "client_phone_notes",
-      "value": "VIP"
-    },
-    {
-      "name": "contact_for_inspection",
-      "value": "Lee Baty"
-    },
-    {
-      "name": "inspection_address",
-      "value": "L"
-    },
-    {
-      "name": "vehicle_registration",
-      "value": "W705ACW"
-    },
-    {
-      "name": "on_site_in_use",
-      "value": "In Use"
-    },
-    {
-      "name": "internal_reference",
-      "value": "18-700162"
-    }
-  ],
-  "fees": {
-    "net": 50,
-    "vat": 10,
-    "gross": 60
-  },
-  "status": {
-    "status": "Instruction Received"
-  },
-  "taskUsers": [
-    {
-      "user": {
-        "id": 7,
-        "name": "Client Testing Principal"
-      },
-      "relationship": "Client"
-    },
-    {
-      "user": {
-        "id": 7,
-        "name": "Client Testing Principal"
-      },
-      "relationship": "Client staff"
-    },
-    {
-      "user": {
-        "id": 6006887,
-        "name": "Markey, Sarah"
-      },
-      "relationship": "Owner"
-    }
-  ]
-}
+HTTP/1.1 201 Created
+Server: nginx
+Content-Type: application/json
+Connection: close
+X-Powered-By: PHP/7.0.30
+Cache-Control: max-age=0, must-revalidate, private
+Date: Wed, 27 Jun 2018 11:00:11 GMT
+Strict-Transport-Security: max-age=31536000;
+Content-Length: 1444
+
+{"id":700332,"data":[{"name":"principal_reference","value":"reference"},{"name":"inspection_contact_phone","value":"inspection-phone"},{"name":"accident_date","value":""},{"name":"area_of_damage_to_vehicle_reported","value":"Rear"},{"name":"agent_special_instructions","value":"Ring 2hrs before arrival"},{"name":"principal_comments","value":"Important Client"},{"name":"agent_important_special_instructions","value":"Car has been in previouse accident on 17th may 2017 and was repaired"},{"name":"file_referrer","value":"MD accident management"},{"name":"contact_for_inspection","value":"Lee Baty"},{"name":"inspection_address","value":"CH47 4BP"},{"name":"vehicle_registration","value":"YR57AEJ"},{"name":"client_salutation","value":"Mr"},{"name":"client_postcode","value":"C"},{"name":"client_email_address","value":"lee.baty@laird-assessors.com"},{"name":"client_daytime_phone","value":"01513429961"},{"name":"client_evening_phone","value":"01513429961"},{"name":"client_mobile","value":"0777777777"},{"name":"client_phone_notes","value":"VIP"},{"name":"internal_reference","value":"18-700301"}],"fees":{"net":80,"vat":16,"gross":96},"status":{"status":"Instruction Received"},"taskUsers":[{"user":{"id":1401,"name":"Easi Drive Accident Management"},"relationship":"Client"},{"user":{"id":1401,"name":"Easi Drive Accident Management"},"relationship":"Client staff"},{"user":{"id":6001946,"name":"Sharples, Hannah"},"relationship":"Owner"}]}
 
 ```
