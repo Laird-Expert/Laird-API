@@ -47,9 +47,7 @@ Once you have your API keys you will need to work out all the different report t
 
 [Avaliblity](https://github.com/Laird-Expert/Laird-API/blob/master/task/avalibility_xml.md) - XML
 
-[Allocate Resource](https://github.com/Laird-Expert/Laird-API/blob/master/task/allocate-resource_json.md) - JSON
-
-[Allocate Resource](https://github.com/Laird-Expert/Laird-API/blob/master/task/allocate-resource_xml.md) - XML
+[Allocate Resource](https://github.com/Laird-Expert/Laird-API/blob/master/task/allocate-resource.md) - JSON /XML
 
 [Check Status](https://github.com/Laird-Expert/Laird-API/blob/master/task/status_json.md) - JSON
 
