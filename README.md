@@ -1,4 +1,5 @@
 # Laird-API
+![alt text](https://www.laird-assessors.com/ "Logo")
 Examples for the Laird Assessors API
 
 
