@@ -8,7 +8,7 @@ Notes
 
 2. Internal Rerfence is the Laird Assessors Rerference.
 
-3. Dates are in UTC format yyyy-mm-dd
+3. Dates should be submitted d/m/Y (21/5/2018)
 
 4. Workflow ID is required and is the type of report you wish us to do.
 
@@ -57,7 +57,7 @@ Connection: close
 		},
 		{
 			"name": "accident_date",
-			"value": "accident-date"
+			"value": "5//5/2017"
 		},
 		{
 			"name": "area_of_damage_to_vehicle_reported",
