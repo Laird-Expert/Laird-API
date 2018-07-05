@@ -8,7 +8,7 @@ Notes
 
 2. Internal Rerfence is the Laird Assessors Rerference.
 
-3. Dates are in UTC format yyyy-mm-dd
+3. Dates should be submitted d/m/Y (21/5/2018)
 
 4. Workflow ID is required and is the type of report you wish us to do.
 
@@ -36,7 +36,7 @@ Cache-Control: no-cache
 	   <item name="principal_reference">YOUR REFERENCE/item>
 	   <item name="inspection_contact_phone">inspection-phone</item>
 	   <item name="contact_for_inspection">inspection-contact-name</item>
-	   <item name="accident_date">2018-04-01</item>
+	   <item name="accident_date">1/5/2017</item>
 	   <item name="area_of_damage_to_vehicle_reported">area-of-damage</item>
    </data>
 </request>
@@ -51,7 +51,7 @@ Example Response
     <data>
         <item name="principal_reference">reference</item>
         <item name="inspection_contact_phone">inspection-phone</item>
-        <item name="accident_date"></item>
+        <item name="accident_date">2017-05-01</item>
         <item name="area_of_damage_to_vehicle_reported">area-of-damage</item>
         <item name="contact_for_inspection">inspection-contact-name</item>
         <item name="internal_reference">18-700106</item>
