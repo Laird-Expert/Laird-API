@@ -46,6 +46,10 @@ Once you have your API keys you will need to work out all the different report t
 
 [Create a Task](https://github.com/Laird-Expert/Laird-API/blob/master/task/task_xml.md) - XML
 
+[Send File](https://raw.githubusercontent.com/Laird-Expert/Laird-API/master/file/send_file_json.md) - JSON
+
+[Send File](https://raw.githubusercontent.com/Laird-Expert/Laird-API/master/file/send_file_xml.md) - XML
+
 [Avaliblity](https://github.com/Laird-Expert/Laird-API/blob/master/task/avalibility_json.md)
 
 [Avaliblity](https://github.com/Laird-Expert/Laird-API/blob/master/task/avalibility_xml.md) - XML
