@@ -18,7 +18,7 @@ Test Endpoint
 ----
 
 ```
-https://test2-lairdassessors.swiftcase.co.uk
+https://test-lairdassessors.swiftcase.co.uk
 ```
 
 Live Endpoint
