@@ -2,7 +2,7 @@ require "net/http"
 require "uri"
 require "openssl"
 
-uri = URI.parse("https://test2-lairdassessors.swiftcase.co.uk/api/v2/YOURAPIKEY/workflows.json")
+uri = URI.parse("https://test-lairdassessors.swiftcase.co.uk/api/v2/YOURAPIKEY/workflows.json")
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 
