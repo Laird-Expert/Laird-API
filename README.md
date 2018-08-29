@@ -50,9 +50,9 @@ Once you have your API keys you will need to work out all the different report t
 
 [Send File](https://raw.githubusercontent.com/Laird-Expert/Laird-API/master/file/send_file_xml.md) - XML
 
-[Avaliblity](https://github.com/Laird-Expert/Laird-API/blob/master/task/avalibility_json.md)
+[Avaliblity](https://github.com/Laird-Expert/Laird-API/blob/master/task/avalibility_json.md) (OPTIONAL)
 
-[Avaliblity](https://github.com/Laird-Expert/Laird-API/blob/master/task/avalibility_xml.md) - XML
+[Avaliblity](https://github.com/Laird-Expert/Laird-API/blob/master/task/avalibility_xml.md) - XML (OPTIONAL)
 
 [Allocate Resource](https://github.com/Laird-Expert/Laird-API/blob/master/task/allocate-resource.md) - JSON /XML
 
@@ -76,6 +76,10 @@ Workflow Example for VDAR (Physical Inspection)
 ----
 
 [![VDAR](https://s31.postimg.cc/wxd1cuqyj/Capture.png)](https://postimg.cc/image/hon3z2x9z/)
+
+## Note
+
+Booking an inspection is an optional process it's not a requirement.
 
 
 
