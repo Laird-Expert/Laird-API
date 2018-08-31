@@ -15,7 +15,7 @@ Example Request
 GET /api/v2/YOURAPIKEY/workflow/128.xml HTTP/1.1
 User-Agent: Laird Assessors API Example
 Accept: */*
-Host: test2-lairdassessors.swiftcase.co.uk
+Host: test-lairdassessors.swiftcase.co.uk
 Accept-Encoding: gzip, deflate
 Connection: close
 ```
