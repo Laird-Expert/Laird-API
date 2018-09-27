@@ -23,7 +23,7 @@ Example Request
 
 ```
 POST /api/v2/YOURAPIKEY/task.xml HTTP/1.1
-Host: test2-lairdassessors.swiftcase.co.uk
+Host: test-lairdassessors.swiftcase.co.uk
 Content-Type: text/xml
 Cache-Control: no-cache
 
