@@ -2,10 +2,11 @@ For Proclaim users some URLS are not possible so we have created some bridges to
 
 We have also supplied the SSL certificates for openedge.
 
-### Endpoints
+Endpoints
+ ---
 
-Test Endpoint
----
+### Test Endpoint
+
 ```
 https://bridges.laird-assessors.com/test/
 ```
@@ -17,11 +18,12 @@ https://bridges.laird-assessors.com/live/
 ```
 
 
-### Examples
+Examples
+---
 
 
-Example for the Booking of an Engineer
-----
+### Example for the Booking of an Engineer
+
 
 ```
 https://bridges.laird-assessors.com/test/engineer.php?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOURDATE&maxresult=15
@@ -29,16 +31,16 @@ https://bridges.laird-assessors.com/test/engineer.php?APIKEY=YOURAPIKEY&TASK=YOU
 
 
 
-Example of Workflow Questions
----
+### Example of Workflow Questions
+
 
 ```
 https://bridges.laird-assessors.com/test/workflowq.php?APIKEY=YOURAPIKEY&ID=WORKFLOWID
 ```
 
 
-Example of Status
----
+### Example of Status
+
 
 ```
 https://bridges.laird-assessors.com/test/status.php?APIKEY=YOURAPIKEY&TASK=TASKID
