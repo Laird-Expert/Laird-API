@@ -41,5 +41,5 @@ Example of Status
 ---
 
 ```
-https://bridges.laird-assessors.com/test/workflowq.php?APIKEY=YOURAPIKEY&TASK=TASKID
+https://bridges.laird-assessors.com/test/status.php?APIKEY=YOURAPIKEY&TASK=TASKID
 ```
