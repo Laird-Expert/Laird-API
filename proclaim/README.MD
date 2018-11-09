@@ -35,3 +35,11 @@ Example of Workflow Questions
 ```
 https://bridges.laird-assessors.com/test/workflowq.php?APIKEY=YOURAPIKEY&ID=WORKFLOWID
 ```
+
+
+Example of Status
+---
+
+```
+https://bridges.laird-assessors.com/test/workflowq.php?APIKEY=YOURAPIKEY&TASK=TASKID
+```
