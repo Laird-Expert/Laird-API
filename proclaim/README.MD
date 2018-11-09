@@ -35,7 +35,7 @@ https://bridges.laird-assessors.com/test/engineer.php?APIKEY=YOURAPIKEY&TASK=YOU
 
 
 ```
-https://bridges.laird-assessors.com/test/workflowq.php?APIKEY=YOURAPIKEY&ID=WORKFLOWID
+https://bridges.laird-assessors.com/test/workflowsq.php?APIKEY=YOURAPIKEY&ID=WORKFLOWID
 ```
 
 
