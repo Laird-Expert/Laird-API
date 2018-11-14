@@ -1,12 +1,12 @@
 package main
 
-// Laird Assessors API Bridge for Pro-claim users
+// Laird Assessors API BrIDge for Pro-claim users
 //
 // This is a early beta and may lack proper errors
 //
 // Made By Robert Wiggins (robert.wiggins@laird-assessors.com)
 //
-// Any Errors please provide the full request and response to assist me in diagnosing the issue
+// Any Errors please provIDe the full request and response to assist me in diagnosing the issue
 //
 //
 //
@@ -29,11 +29,11 @@ func tworkflows(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
 	}
-	apikey := r.FormValue("apikey")
-	id := r.FormValue("id")
+	APIKEY := r.FormValue("APIKEY")
+	ID := r.FormValue("ID")
 
 
-	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+apikey+"/workflow/"+id+".xml"
+	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/workflow/"+ID+".xml"
 
 	req, err := http.NewRequest("GET", genurl, nil)
 	if err != nil {
@@ -41,7 +41,7 @@ func tworkflows(w http.ResponseWriter, r *http.Request) {
 	}
 	req.Host = "test-lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
-	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
+	req.Header.Set("User-Agent", "Laird API BrIDge GoLang")
 	req.Header.Set("Accept", "*/*")
 	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
@@ -67,11 +67,11 @@ func lworkflows(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
 	}
-	apikey := r.FormValue("apikey")
-	id := r.FormValue("id")
+	APIKEY := r.FormValue("APIKEY")
+	ID := r.FormValue("ID")
 
 
-	genurl := "https://lairdassessors.swiftcase.co.uk/api/v2/"+apikey+"/workflow/"+id+".xml"
+	genurl := "https://lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/workflow/"+ID+".xml"
 
 	req, err := http.NewRequest("GET", genurl, nil)
 	if err != nil {
@@ -79,7 +79,7 @@ func lworkflows(w http.ResponseWriter, r *http.Request) {
 	}
 	req.Host = "lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
-	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
+	req.Header.Set("User-Agent", "Laird API BrIDge GoLang")
 	req.Header.Set("Accept", "*/*")
 	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
@@ -105,11 +105,11 @@ func tstatus(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
 	}
-	apikey := r.FormValue("apikey")
-	id := r.FormValue("id")
+	APIKEY := r.FormValue("APIKEY")
+	ID := r.FormValue("ID")
 
 
-	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+apikey+"/task/"+id+"/status.xml"
+	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task/"+ID+"/status.xml"
 
 	req, err := http.NewRequest("GET", genurl, nil)
 	if err != nil {
@@ -117,7 +117,7 @@ func tstatus(w http.ResponseWriter, r *http.Request) {
 	}
 	req.Host = "test-lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
-	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
+	req.Header.Set("User-Agent", "Laird API BrIDge GoLang")
 	req.Header.Set("Accept", "*/*")
 	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
@@ -142,11 +142,11 @@ func lstatus(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
 	}
-	apikey := r.FormValue("apikey")
-	id := r.FormValue("id")
+	APIKEY := r.FormValue("APIKEY")
+	ID := r.FormValue("ID")
 
 
-	genurl := "https://lairdassessors.swiftcase.co.uk/api/v2/"+apikey+"/task/"+id+"/status.xml"
+	genurl := "https://lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task/"+ID+"/status.xml"
 
 	req, err := http.NewRequest("GET", genurl, nil)
 	if err != nil {
@@ -154,7 +154,7 @@ func lstatus(w http.ResponseWriter, r *http.Request) {
 	}
 	req.Host = "lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
-	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
+	req.Header.Set("User-Agent", "Laird API BrIDge GoLang")
 	req.Header.Set("Accept", "*/*")
 	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
@@ -180,13 +180,13 @@ func tengineer(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
 	}
-	apikey := r.FormValue("apikey")
-	id := r.FormValue("id")
-	idate := r.FormValue("idate")
-	maxresult := r.FormValue("maxresult")
+	APIKEY := r.FormValue("APIKEY")
+	TASK := r.FormValue("TASK")
+	IDATE := r.FormValue("IDATE")
+	MAXRESULT := r.FormValue("MAXRESULT")
 
 
-	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+apikey+"/task/"+id+"/availability/"+idate+"/"+maxresult+".xml"
+	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task/"+TASK+"/availability/"+IDATE+"/"+MAXRESULT+".xml"
 
 	req, err := http.NewRequest("GET", genurl, nil)
 	if err != nil {
@@ -194,7 +194,7 @@ func tengineer(w http.ResponseWriter, r *http.Request) {
 	}
 	req.Host = "test-lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
-	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
+	req.Header.Set("User-Agent", "Laird API BrIDge GoLang")
 	req.Header.Set("Accept", "*/*")
 	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
@@ -219,13 +219,13 @@ func lengineer(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
 	}
-	apikey := r.FormValue("apikey")
-	id := r.FormValue("id")
-	idate := r.FormValue("idate")
-	maxresult := r.FormValue("maxresult")
+	APIKEY := r.FormValue("APIKEY")
+	TASK := r.FormValue("TASk")
+	IDATE := r.FormValue("IDATE")
+	MAXRESULT := r.FormValue("MAXRESULT")
 
 
-	genurl := "https://lairdassessors.swiftcase.co.uk/api/v2/"+apikey+"/task/"+id+"/availability/"+idate+"/"+maxresult+".xml"
+	genurl := "https://lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task/"+TASK+"/availability/"+IDATE+"/"+MAXRESULT+".xml"
 
 	req, err := http.NewRequest("GET", genurl, nil)
 	if err != nil {
@@ -233,7 +233,7 @@ func lengineer(w http.ResponseWriter, r *http.Request) {
 	}
 	req.Host = "lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
-	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
+	req.Header.Set("User-Agent", "Laird API BrIDge GoLang")
 	req.Header.Set("Accept", "*/*")
 	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
@@ -275,7 +275,7 @@ func main() {
 
 
 
-	fmt.Printf("Starting Laird Assessors API Bridges Server...\n")
+	fmt.Printf("Starting Laird Assessors API Bridge Server...\n")
 	err := http.ListenAndServe(":9090", nil) // setting listening port
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
