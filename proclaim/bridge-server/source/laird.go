@@ -20,6 +20,10 @@ import (
 	"net/http"
 )
 
+func enableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+
+}
 
 
 func tworkflows(w http.ResponseWriter, r *http.Request) {
@@ -31,6 +35,7 @@ func tworkflows(w http.ResponseWriter, r *http.Request) {
 	}
 	APIKEY := r.FormValue("APIKEY")
 	ID := r.FormValue("ID")
+	enableCors(&w)
 
 
 	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/workflow/"+ID+".xml"
@@ -41,7 +46,7 @@ func tworkflows(w http.ResponseWriter, r *http.Request) {
 	}
 	req.Host = "test-lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
-	req.Header.Set("User-Agent", "Laird API BrIDge GoLang")
+	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
 	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
@@ -55,7 +60,12 @@ func tworkflows(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
+	if resp.StatusCode == 200 {
+		w.Header().Set("Content-Type", "application/xml")
+	}
 
+	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -69,7 +79,7 @@ func lworkflows(w http.ResponseWriter, r *http.Request) {
 	}
 	APIKEY := r.FormValue("APIKEY")
 	ID := r.FormValue("ID")
-
+	enableCors(&w)
 
 	genurl := "https://lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/workflow/"+ID+".xml"
 
@@ -79,7 +89,7 @@ func lworkflows(w http.ResponseWriter, r *http.Request) {
 	}
 	req.Host = "lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
-	req.Header.Set("User-Agent", "Laird API BrIDge GoLang")
+	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
 	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
@@ -93,7 +103,11 @@ func lworkflows(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-
+	if resp.StatusCode == 200 {
+		w.Header().Set("Content-Type", "application/xml")
+	}
+	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
@@ -106,10 +120,10 @@ func tstatus(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	APIKEY := r.FormValue("APIKEY")
-	ID := r.FormValue("ID")
+	TASK := r.FormValue("TASK")
+	enableCors(&w)
 
-
-	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task/"+ID+"/status.xml"
+	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task/"+TASK+"/status.xml"
 
 	req, err := http.NewRequest("GET", genurl, nil)
 	if err != nil {
@@ -117,7 +131,7 @@ func tstatus(w http.ResponseWriter, r *http.Request) {
 	}
 	req.Host = "test-lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
-	req.Header.Set("User-Agent", "Laird API BrIDge GoLang")
+	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
 	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
@@ -131,7 +145,11 @@ func tstatus(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-
+	if resp.StatusCode == 200 {
+		w.Header().Set("Content-Type", "application/xml")
+	}
+	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
@@ -143,10 +161,10 @@ func lstatus(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	APIKEY := r.FormValue("APIKEY")
-	ID := r.FormValue("ID")
+	TASK := r.FormValue("TASK")
+	enableCors(&w)
 
-
-	genurl := "https://lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task/"+ID+"/status.xml"
+	genurl := "https://lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task/"+TASK+"/status.xml"
 
 	req, err := http.NewRequest("GET", genurl, nil)
 	if err != nil {
@@ -154,7 +172,7 @@ func lstatus(w http.ResponseWriter, r *http.Request) {
 	}
 	req.Host = "lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
-	req.Header.Set("User-Agent", "Laird API BrIDge GoLang")
+	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
 	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
@@ -168,7 +186,11 @@ func lstatus(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-
+	if resp.StatusCode == 200 {
+		w.Header().Set("Content-Type", "application/xml")
+	}
+	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
@@ -184,7 +206,7 @@ func tengineer(w http.ResponseWriter, r *http.Request) {
 	TASK := r.FormValue("TASK")
 	IDATE := r.FormValue("IDATE")
 	MAXRESULT := r.FormValue("MAXRESULT")
-
+	enableCors(&w)
 
 	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task/"+TASK+"/availability/"+IDATE+"/"+MAXRESULT+".xml"
 
@@ -194,7 +216,7 @@ func tengineer(w http.ResponseWriter, r *http.Request) {
 	}
 	req.Host = "test-lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
-	req.Header.Set("User-Agent", "Laird API BrIDge GoLang")
+	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
 	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
@@ -208,7 +230,11 @@ func tengineer(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-
+	if resp.StatusCode == 200 {
+		w.Header().Set("Content-Type", "application/xml")
+	}
+	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
@@ -223,7 +249,7 @@ func lengineer(w http.ResponseWriter, r *http.Request) {
 	TASK := r.FormValue("TASk")
 	IDATE := r.FormValue("IDATE")
 	MAXRESULT := r.FormValue("MAXRESULT")
-
+	enableCors(&w)
 
 	genurl := "https://lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task/"+TASK+"/availability/"+IDATE+"/"+MAXRESULT+".xml"
 
@@ -233,7 +259,7 @@ func lengineer(w http.ResponseWriter, r *http.Request) {
 	}
 	req.Host = "lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
-	req.Header.Set("User-Agent", "Laird API BrIDge GoLang")
+	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
 	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
@@ -242,12 +268,17 @@ func lengineer(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
+	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 	defer resp.Body.Close()
 	responseData, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		fmt.Println(err)
 	}
-
+	if resp.StatusCode == 200 {
+		w.Header().Set("Content-Type", "application/xml")
+	}
+	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
