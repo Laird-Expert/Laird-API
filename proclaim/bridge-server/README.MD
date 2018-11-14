@@ -28,11 +28,11 @@ https://localhost:9090/live/engineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOU
 
 
 ```
-https://localhost:9090/test/workflowsq.php?APIKEY=YOURAPIKEY&ID=WORKFLOWID
+https://localhost:9090/test/workflow.php?APIKEY=YOURAPIKEY&ID=WORKFLOWID
 ```
 
 ```
-https://localhost:9090/live/workflowsq.php?APIKEY=YOURAPIKEY&ID=WORKFLOWID
+https://localhost:9090/live/workflow?APIKEY=YOURAPIKEY&ID=WORKFLOWID
 ```
 
 ### Example of Status
