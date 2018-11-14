@@ -18,7 +18,7 @@ Example Request
 
 ```
 GET /api/v2/YOURAPIKEY/task/TASKID/availability/DATEFROM/MAXRESULTS.xml HTTP/1.1
-Host: test2-lairdassessors.swiftcase.co.uk
+Host: test-lairdassessors.swiftcase.co.uk
 Content-Type: application/x-www-form-urlencoded
 Cache-Control: no-cache
 ```
