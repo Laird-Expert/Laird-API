@@ -9,6 +9,8 @@ API Keys will be provided to you on request and you will be provided with a test
 
 The API will support request and responses in JSON or XML format.
 
+Any Pro claim users please check the pro claim folder as we have built some bridges to allow you to send information to some of the API endpoints that are not compatible with pro cliam.
+
 Documentation from swiftcase - [Google Docs](https://docs.google.com/document/d/1K12qIap1dvEQLvJigxjzOE5EH9VgYWicSsTfFjpKn0M/edit?ts=5afa9b0f)
 
 If you have any questions please email robert.wiggins@laird-assessors.com.
