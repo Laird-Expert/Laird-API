@@ -2,6 +2,10 @@ For Proclaim users some URLS are not possible so we have created some bridges to
 
 We have also supplied the SSL certificates for openedge.
 
+If you run in to issues with these endpoints we have made a bridge server you can host yourself to get past these issues.
+
+https://github.com/Laird-Expert/Laird-API/tree/master/proclaim/bridge-server
+
 Endpoints
  ---
 
