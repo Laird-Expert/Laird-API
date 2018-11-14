@@ -6,12 +6,9 @@ package main
 //
 // Made By Robert Wiggins (robert.wiggins@laird-assessors.com)
 //
-// Any Errors please provIDe the full request and response to assist me in diagnosing the issue
+// Any Errors please provide the full request to assist me in diagnosing the issue
 //
-//
-//
-//
-//
+
 
 import (
 	"fmt"
@@ -65,6 +62,7 @@ func tworkflows(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
@@ -107,6 +105,7 @@ func lworkflows(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/xml")
 	}
 	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
@@ -149,6 +148,7 @@ func tstatus(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/xml")
 	}
 	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
@@ -190,6 +190,7 @@ func lstatus(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/xml")
 	}
 	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
@@ -234,6 +235,7 @@ func tengineer(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/xml")
 	}
 	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
@@ -278,6 +280,7 @@ func lengineer(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/xml")
 	}
 	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
