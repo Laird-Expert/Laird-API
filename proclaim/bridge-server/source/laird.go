@@ -1,5 +1,15 @@
 package main
 
+// Laird Assessors API Bridge for Pro-claim users
+//
+// This is a early beta and may lack proper errors
+//
+// Made By Robert Wiggins (robert.wiggins@laird-assessors.com)
+//
+// Any Errors please provide the full request to assist me in diagnosing the issue
+//
+
+
 import (
 	"flag"
 	"fmt"
@@ -12,14 +22,7 @@ import (
 	"time"
 )
 
-// Laird Assessors API BrIDge for Pro-claim users
-//
-// This is a early beta and may lack proper errors
-//
-// Made By Robert Wiggins (robert.wiggins@laird-assessors.com)
-//
-// Any Errors please provide the full request to assist me in diagnosing the issue
-//
+
 
 var port= flag.String("port", "9090", "Webserver port other than 9090")
 
@@ -32,7 +35,7 @@ func enableCors(w *http.ResponseWriter) {
 
 func tworkflows(w http.ResponseWriter, r *http.Request) {
 
-	// Call ParseForm() to parse the raw query and update r.PostForm and r.Form.
+	
 	if err := r.ParseForm(); err != nil {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
@@ -76,7 +79,7 @@ func tworkflows(w http.ResponseWriter, r *http.Request) {
 }
 
 func lworkflows(w http.ResponseWriter, r *http.Request) {
-	// Call ParseForm() to parse the raw query and update r.PostForm and r.Form.
+	
 	if err := r.ParseForm(); err != nil {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
@@ -118,7 +121,7 @@ func lworkflows(w http.ResponseWriter, r *http.Request) {
 
 
 func tstatus(w http.ResponseWriter, r *http.Request) {
-	// Call ParseForm() to parse the raw query and update r.PostForm and r.Form.
+
 	if err := r.ParseForm(); err != nil {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
@@ -159,7 +162,7 @@ func tstatus(w http.ResponseWriter, r *http.Request) {
 }
 
 func lstatus(w http.ResponseWriter, r *http.Request) {
-	// Call ParseForm() to parse the raw query and update r.PostForm and r.Form.
+
 	if err := r.ParseForm(); err != nil {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
@@ -201,7 +204,7 @@ func lstatus(w http.ResponseWriter, r *http.Request) {
 
 
 func tengineer(w http.ResponseWriter, r *http.Request) {
-	// Call ParseForm() to parse the raw query and update r.PostForm and r.Form.
+
 	if err := r.ParseForm(); err != nil {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
@@ -244,7 +247,7 @@ func tengineer(w http.ResponseWriter, r *http.Request) {
 }
 
 func lengineer(w http.ResponseWriter, r *http.Request) {
-	// Call ParseForm() to parse the raw query and update r.PostForm and r.Form.
+
 	if err := r.ParseForm(); err != nil {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
