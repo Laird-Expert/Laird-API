@@ -1,5 +1,17 @@
 package main
 
+import (
+	"flag"
+	"fmt"
+	"io/ioutil"
+	"log"
+	"net/http"
+	"os"
+	"os/signal"
+	"syscall"
+	"time"
+)
+
 // Laird Assessors API BrIDge for Pro-claim users
 //
 // This is a early beta and may lack proper errors
@@ -9,13 +21,8 @@ package main
 // Any Errors please provide the full request to assist me in diagnosing the issue
 //
 
+var port= flag.String("port", "9090", "Webserver port other than 9090")
 
-import (
-	"fmt"
-	"io/ioutil"
-	"log"
-	"net/http"
-)
 
 func enableCors(w *http.ResponseWriter) {
 	(*w).Header().Set("Access-Control-Allow-Origin", "*")
@@ -45,7 +52,6 @@ func tworkflows(w http.ResponseWriter, r *http.Request) {
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
-	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
 
 	resp, err := http.DefaultClient.Do(req)
@@ -89,7 +95,6 @@ func lworkflows(w http.ResponseWriter, r *http.Request) {
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
-	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
 
 	resp, err := http.DefaultClient.Do(req)
@@ -132,7 +137,6 @@ func tstatus(w http.ResponseWriter, r *http.Request) {
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
-	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
 
 	resp, err := http.DefaultClient.Do(req)
@@ -174,7 +178,6 @@ func lstatus(w http.ResponseWriter, r *http.Request) {
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
-	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
 
 	resp, err := http.DefaultClient.Do(req)
@@ -219,7 +222,6 @@ func tengineer(w http.ResponseWriter, r *http.Request) {
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
-	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
 
 	resp, err := http.DefaultClient.Do(req)
@@ -263,7 +265,6 @@ func lengineer(w http.ResponseWriter, r *http.Request) {
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
-	//req.Header.Set("Accept-Encoding", "gzip, deflate")
 	req.Header.Set("Connection", "close")
 
 	resp, err := http.DefaultClient.Do(req)
@@ -309,10 +310,25 @@ func main() {
 
 
 
-	fmt.Printf("Starting Laird Assessors API Bridge Server...\n")
-	err := http.ListenAndServe(":9090", nil) // setting listening port
+
+	flag.Parse()
+	fport := ":"+*port+""
+	fmt.Printf("Started Laird Assessors API Bridge Server on port "+*port+"...\n")
+	fmt.Printf("Press CTRL + C to terminate\n")
+	var gracefulStop = make(chan os.Signal)
+	signal.Notify(gracefulStop, syscall.SIGTERM)
+	signal.Notify(gracefulStop, syscall.SIGINT)
+	go func() {
+		sig := <-gracefulStop
+		fmt.Printf("caught sig: %+v", sig)
+		fmt.Println("Wait for 2 second to finish processing")
+		time.Sleep(2*time.Second)
+		os.Exit(0)
+	}()
+	err := http.ListenAndServe(fport, nil) // setting listening port
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
 
 }
+
