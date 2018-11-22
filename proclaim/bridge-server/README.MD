@@ -5,7 +5,7 @@ Due to some issues with some clients having SSL errors I have built a small serv
 
 I have attached some pre-compiled binarys but if you have go installed you can compile it your self with go build.
 
-You can run the binary and add --port 5555 if you wish to start the bridge server on another port other than 9090
+You can run the binary and add --port 5555 if you wish to start the bridge server on another port other than 5050
 
 
 ### Endpoints
