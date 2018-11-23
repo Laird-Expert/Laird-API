@@ -17,7 +17,7 @@ Example Request
 ------
 
 ```
-POST /api/v2/YOURAPIKEY/task/TASKID/file.json HTTP/1.1
+POST /api/v2/YOURAPIKEY/task/TASKID/files.json HTTP/1.1
 Content-Type: application/json
 cache-control: no-cache
 Accept: */*
