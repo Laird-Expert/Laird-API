@@ -20,7 +20,7 @@ Example Request
 POST /api/v2/YOURAPIKEY/task/TASKID/file.xml
 Content-Type: text/xml
 Accept: */*
-Host: test2-lairdassessors.swiftcase.co.uk
+Host: test-lairdassessors.swiftcase.co.uk
 Accept-Encoding: gzip, deflate
 
 <?xml version="1.0" encoding="UTF-8"?>
