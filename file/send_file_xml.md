@@ -17,7 +17,7 @@ Example Request
 ------
 
 ```
-POST /api/v2/YOURAPIKEY/task/TASKID/file.xml
+POST /api/v2/YOURAPIKEY/task/TASKID/files.xml
 Content-Type: text/xml
 Accept: */*
 Host: test-lairdassessors.swiftcase.co.uk
