@@ -49,3 +49,19 @@ https://bridges.laird-assessors.com/test/workflowsq.php?APIKEY=YOURAPIKEY&ID=WOR
 ```
 https://bridges.laird-assessors.com/test/status.php?APIKEY=YOURAPIKEY&TASK=TASKID
 ```
+
+### Example of Sending File
+
+```
+POST /test/sendfile.php?APIKEY=YOURAPIKEY&TASK=YOURTASKID HTTP/1.1
+Host: bridges.laird-assessors.com
+Content-Type: application/xml
+Content-Length: 136514
+
+<?xml version="1.0" encoding="UTF-8"?>
+<file>
+    <name>DSC08428.JPG</name>
+    <type>image/jpeg</type>
+    <data>/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAJTAlgDASIAAhEBAxEB/8QAHQAAAAcBAQEAAAAAAAAAAAAAAgMEBQYHCAABCf</data>
+</file>
+```
