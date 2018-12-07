@@ -38,6 +38,7 @@ Cache-Control: no-cache
 	   <item name="contact_for_inspection">inspection-contact-name</item>
 	   <item name="accident_date">1/5/2017</item>
 	   <item name="area_of_damage_to_vehicle_reported">area-of-damage</item>
+	   <item name="vehicle_registration">&lt;registration&gt;W705ACW&lt;/registration&gt;</item>
    </data>
 </request>
 ```
@@ -55,7 +56,7 @@ Example Response
         <item name="area_of_damage_to_vehicle_reported">area-of-damage</item>
         <item name="contact_for_inspection">inspection-contact-name</item>
         <item name="internal_reference">18-700106</item>
-	<item name="vehicle_registration">&lt;registration&gt;W705ACW&lt;/registration&gt;</item>
+	
     </data>
     <fees>
         <net>100.00</net>
