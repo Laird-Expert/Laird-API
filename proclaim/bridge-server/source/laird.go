@@ -2,7 +2,7 @@ package main
 
 // Laird Assessors API Bridge for Pro-claim users
 //
-// This is a early beta and may lack errors and logging functions
+// This is a early beta and may lack proper errors
 //
 // Made By Robert Wiggins (robert.wiggins@laird-assessors.com)
 //
@@ -18,6 +18,7 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	"strings"
 	"syscall"
 	"time"
 )
@@ -339,7 +340,8 @@ func tengineer(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 	logapi()
 	responseString := string(responseData)
-	fmt.Fprint(w, responseString)
+	space := strings.TrimLeft(responseString, "\r\n")
+	fmt.Fprint(w, space)
 }
 
 func lengineer(w http.ResponseWriter, r *http.Request) {
@@ -384,7 +386,8 @@ func lengineer(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 	logapi()
 	responseString := string(responseData)
-	fmt.Fprint(w, responseString)
+	space := strings.TrimLeft(responseString, "\r\n")
+	fmt.Fprint(w, space)
 }
 
 
