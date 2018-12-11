@@ -34,14 +34,6 @@ func enableCors(w *http.ResponseWriter) {
 
 }
 
-func logapi() {
-
-
-}
-
-
-
-
 
 func lgetfiles(w http.ResponseWriter, r *http.Request) {
 
@@ -77,12 +69,17 @@ func lgetfiles(w http.ResponseWriter, r *http.Request) {
 	if resp.StatusCode == 200 {
 		w.Header().Set("Content-Type", "application/xml")
 	}
+
+
+
+
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
+
 }
 
 func tgetfiles(w http.ResponseWriter, r *http.Request) {
@@ -99,9 +96,10 @@ func tgetfiles(w http.ResponseWriter, r *http.Request) {
 
 	req, err := http.NewRequest("GET", genurl, nil)
 	if err != nil {
+
 		fmt.Println(err)
 	}
-	req.Host = "lairdassessors.swiftcase.co.uk"
+	req.Host = "test-lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
@@ -109,22 +107,29 @@ func tgetfiles(w http.ResponseWriter, r *http.Request) {
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
+
 		fmt.Println(err)
 	}
 	defer resp.Body.Close()
+	w.Header().Set("Content-Type", "application/xml")
+	w.WriteHeader(resp.StatusCode)
+
+
 	responseData, err := ioutil.ReadAll(resp.Body)
+	responseString := string(responseData)
+	fmt.Fprint(w, responseString)
+
 	if err != nil {
 		fmt.Println(err)
 	}
-	if resp.StatusCode == 200 {
-		w.Header().Set("Content-Type", "application/xml")
-	}
-	w.WriteHeader(resp.StatusCode)
+
+
+
+
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
-	responseString := string(responseData)
-	fmt.Fprint(w, responseString)
+	
+
 }
 
 
@@ -177,7 +182,7 @@ func lgetfile(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
@@ -200,7 +205,7 @@ func tgetfile(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	req.Host = "lairdassessors.swiftcase.co.uk"
+	req.Host = "test-lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
@@ -221,7 +226,7 @@ func tgetfile(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
@@ -277,7 +282,7 @@ func lbengineer(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -324,7 +329,7 @@ func tbengineer(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -368,7 +373,7 @@ func ttask(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -412,7 +417,7 @@ func lsendfile(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -454,7 +459,7 @@ func tsendfile(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -499,7 +504,7 @@ func ltask(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -548,7 +553,7 @@ func tworkflows(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -591,7 +596,7 @@ func lworkflows(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
@@ -634,7 +639,7 @@ func tstatus(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
@@ -676,7 +681,7 @@ func lstatus(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
@@ -721,7 +726,7 @@ func tengineer(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	space := strings.TrimLeft(responseString, "\r\n")
 	fmt.Fprint(w, space)
@@ -767,7 +772,7 @@ func lengineer(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	space := strings.TrimLeft(responseString, "\r\n")
 	fmt.Fprint(w, space)
@@ -814,7 +819,7 @@ func ttaskdetails(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -839,7 +844,7 @@ func ltaskdetails(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	req.Host = "test-lairdassessors.swiftcase.co.uk"
+	req.Host = "lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
@@ -861,7 +866,7 @@ func ltaskdetails(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	logapi()
+	
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
