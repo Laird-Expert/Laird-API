@@ -17,7 +17,7 @@ Example Request
 
 ```
 GET /api/v2/YOURAPKEY/file/FILEID.xml  HTTP/1.1
-Host: test2-lairdassessors.swiftcase.co.uk
+Host: test-lairdassessors.swiftcase.co.uk
 Cache-Control: no-cache
 ```
 
