@@ -36,16 +36,45 @@ https://localhost:5050/test/bookengineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE
 https://localhost:5050/live/bookengineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOURDATE&BOOKID=1231231
 ```
 
+### Example of Get Files
 
 
+```
+https://localhost:5050/test/getfiles?APIKEY=YOURAPIKEY&TASK=YOURTASKID
+```
+
+```
+https://localhost:5050/live/getfiles?APIKEY=YOURAPIKEY&TASK=YOURTASKID
+```
 
 
+### Example of Get File
+
+
+```
+https://localhost:5050/test/getfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
+```
+
+```
+https://localhost:5050/live/getfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
+```
+
+### Example of Task Details
+
+
+```
+https://localhost:5050/test/taskdetails?APIKEY=YOURAPIKEY&TASK=YOURTASKID
+```
+
+```
+https://localhost:5050/live/taskdetails?APIKEY=YOURAPIKEY&TASK=YOURTASKID
+```
 
 ### Example of Workflow Questions
 
 
 ```
-https://localhost:5050/test/workflow.php?APIKEY=YOURAPIKEY&ID=WORKFLOWID
+https://localhost:5050/test/workflow?APIKEY=YOURAPIKEY&ID=WORKFLOWID
 ```
 
 ```
