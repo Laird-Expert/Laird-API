@@ -38,7 +38,7 @@ Example Response
 ```
 HTTP/1.1 201 Created
 Server: nginx
-Content-Type: application/json
+Content-Type: text/xml
 Connection: close
 X-Powered-By: PHP/7.0.30
 Cache-Control: max-age=0, must-revalidate, private
