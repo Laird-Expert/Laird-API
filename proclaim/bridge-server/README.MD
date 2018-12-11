@@ -24,6 +24,22 @@ https://localhost:5050/test/engineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOU
 https://localhost:5050/live/engineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOURDATE&maxresult=15
 ```
 
+```
+
+### Example for Engineer Booking
+
+
+```
+https://localhost:5050/test/bookengineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOURDATE&BOOKID=1512312
+```
+
+```
+https://localhost:5050/live/bookengineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOURDATE&BOOKID=1231231
+```
+
+```
+
+
 
 
 ### Example of Workflow Questions
