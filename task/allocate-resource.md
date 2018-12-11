@@ -19,6 +19,15 @@ Example Request
 ```
 POST /api/v2/YOURAPIKEY/task/TASKID/allocate-resource.json HTTP/1.1
 Host: test-lairdassessors.swiftcase.co.uk
+
+{
+    "id": 29995,
+    "resource_availabilities": [
+        {
+            "date": "2018-05-13"
+        }
+    ]
+}
 ```
 
 
