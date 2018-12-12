@@ -76,7 +76,7 @@ func lgetfiles(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -128,7 +128,7 @@ func tgetfiles(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 
 }
 
@@ -182,7 +182,7 @@ func lgetfile(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
@@ -226,7 +226,7 @@ func tgetfile(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
@@ -282,7 +282,7 @@ func lbengineer(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -329,7 +329,7 @@ func tbengineer(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -351,8 +351,9 @@ func ttask(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(err)
 	}
 
-
-	xmlpost := bytes.NewReader(b)
+	ree := strings.NewReplacer("<registration>", "&lt;registration&gt;", "</registration>", "&lt;/registration&gt;")
+	result := ree.Replace(string(b))
+	xmlpost := bytes.NewReader([]byte(result))
 
 	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task.xml"
 
@@ -373,7 +374,7 @@ func ttask(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -417,7 +418,7 @@ func lsendfile(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -459,7 +460,7 @@ func tsendfile(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -482,8 +483,9 @@ func ltask(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(err)
 	}
 
-
-	xmlpost := bytes.NewReader(b)
+	ree := strings.NewReplacer("<registration>", "&lt;registration&gt;", "</registration>", "&lt;/registration&gt;")
+	result := ree.Replace(string(b))
+	xmlpost := bytes.NewReader([]byte(result))
 
 	genurl := "https://lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task.xml"
 
@@ -504,9 +506,11 @@ func ltask(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
+
+
 
 
 }
@@ -515,7 +519,7 @@ func ltask(w http.ResponseWriter, r *http.Request) {
 
 func tworkflows(w http.ResponseWriter, r *http.Request) {
 
-	
+
 	if err := r.ParseForm(); err != nil {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
@@ -553,14 +557,14 @@ func tworkflows(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
 }
 
 func lworkflows(w http.ResponseWriter, r *http.Request) {
-	
+
 	if err := r.ParseForm(); err != nil {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
@@ -596,7 +600,7 @@ func lworkflows(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
@@ -639,7 +643,7 @@ func tstatus(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
@@ -681,7 +685,7 @@ func lstatus(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
@@ -726,7 +730,7 @@ func tengineer(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	space := strings.TrimLeft(responseString, "\r\n")
 	fmt.Fprint(w, space)
@@ -772,7 +776,7 @@ func lengineer(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	space := strings.TrimLeft(responseString, "\r\n")
 	fmt.Fprint(w, space)
@@ -819,7 +823,7 @@ func ttaskdetails(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
@@ -866,7 +870,7 @@ func ltaskdetails(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 
