@@ -227,6 +227,10 @@ func tgetfile(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Laird API URL: "+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 
+
+
+
+
 	responseString := string(responseData)
 	fmt.Fprint(w, responseString)
 }
@@ -283,7 +287,11 @@ func lbengineer(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 
-	responseString := string(responseData)
+
+	ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
+	result := ree.Replace(string(responseData))
+
+	responseString := string(result)
 	fmt.Fprint(w, responseString)
 
 
@@ -330,8 +338,13 @@ func tbengineer(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 
-	responseString := string(responseData)
+
+	ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
+	result := ree.Replace(string(responseData))
+
+	responseString := string(result)
 	fmt.Fprint(w, responseString)
+
 
 
 }
