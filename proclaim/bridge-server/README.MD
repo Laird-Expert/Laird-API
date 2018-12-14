@@ -59,6 +59,20 @@ https://localhost:5050/test/getfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
 https://localhost:5050/live/getfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
 ```
 
+
+### Example of Download File
+
+
+```
+https://localhost:5050/test/downloadfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
+```
+
+```
+https://localhost:5050/live/downloadfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
+```
+
+
+
 ### Example of Task Details
 
 
