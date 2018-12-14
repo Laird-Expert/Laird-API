@@ -88,6 +88,8 @@ https://bridges.laird-assessors.com/test/taskdetails.php?APIKEY=YOURAPIKEY&TASK=
 
 ### Example of get files
 
+Take the ID number this returns and pass it as a the FILEID in the next URL.
+
 
 ```
 https://bridges.laird-assessors.com/test/getfiles.php?APIKEY=YOURAPIKEY&TASK=TASKID
