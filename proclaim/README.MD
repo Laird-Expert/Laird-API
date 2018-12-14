@@ -26,11 +26,23 @@ Examples
 ---
 
 
-### Example for the Booking of an Engineer
+### Example for the Avalibility of engineer
+
+This returns an ID number a date for a engineer please take the ID number and pass it to the next url as the BOOKID.
 
 
 ```
 https://bridges.laird-assessors.com/test/engineer.php?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOURDATE&maxresult=15
+```
+
+
+
+
+### Example for the Booking of an Engineer
+
+
+```
+https://bridges.laird-assessors.com/test/engineer.php?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOURDATE&maxresult=15&BOOKID=BOOKID
 ```
 
 
@@ -72,3 +84,23 @@ Content-Length: 136514
 ```
 https://bridges.laird-assessors.com/test/taskdetails.php?APIKEY=YOURAPIKEY&TASK=TASKID
 ```
+
+
+### Example of get files
+
+
+```
+https://bridges.laird-assessors.com/test/getfiles.php?APIKEY=YOURAPIKEY&TASK=TASKID
+```
+
+
+
+### Example of get file
+
+
+```
+https://bridges.laird-assessors.com/test/taskdetails.php?APIKEY=YOURAPIKEY&FILE=FILEID
+```
+
+
+
