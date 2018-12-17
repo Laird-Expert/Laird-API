@@ -11,9 +11,11 @@ package main
 
 import (
 	"bytes"
-
+	"encoding/base64"
+	"encoding/xml"
 	"flag"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -133,6 +135,159 @@ func tgetfiles(w http.ResponseWriter, r *http.Request) {
 }
 
 
+func tdownloadfile(w http.ResponseWriter, r *http.Request) {
+
+	if err := r.ParseForm(); err != nil {
+		fmt.Fprintf(w, "ParseForm() err: %v", err)
+		return
+	}
+	APIKEY := r.FormValue("APIKEY")
+	FILEID := r.FormValue("FILEID")
+	enableCors(&w)
+
+	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/file/"+FILEID+".xml"
+
+	req, err := http.NewRequest("GET", genurl, nil)
+	if err != nil {
+		fmt.Println(err)
+	}
+	req.Host = "test-lairdassessors.swiftcase.co.uk"
+	req.Header.Set("Cache-Control", "no-cache")
+	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
+	req.Header.Set("Accept", "*/*")
+	req.Header.Set("Connection", "close")
+
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer resp.Body.Close()
+	responseData, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API URL: "+genurl+"\n")
+	//fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
+
+
+	type File struct {
+		XMLName xml.Name `xml:"file"`
+		Text    string   `xml:",chardata"`
+		ID      string   `xml:"id"`
+		Name    string   `xml:"name"`
+		Type    string   `xml:"type"`
+		Data    string   `xml:"data"`
+	}
+
+
+	var q File
+
+
+	xml.Unmarshal(responseData,&q)
+	decoded, err := base64.StdEncoding.DecodeString(q.Data)
+	if err != nil {
+		fmt.Println("decode error:", err)
+		return
+	}
+	file := q.Name
+
+	content := bytes.NewReader(decoded)
+
+
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	//copy the relevant headers. If you want to preserve the downloaded file name, extract it with go's url parser.
+	w.Header().Set("Content-Disposition", "attachment; filename="+file+"")
+	w.Header().Set("Content-Type", r.Header.Get("Content-Type"))
+	w.Header().Set("Content-Length", r.Header.Get("Content-Length"))
+
+	//stream the body to the client without fully loading it into memory
+	io.Copy(w, content)
+
+}
+
+
+
+func ldownloadfile(w http.ResponseWriter, r *http.Request) {
+
+	if err := r.ParseForm(); err != nil {
+		fmt.Fprintf(w, "ParseForm() err: %v", err)
+		return
+	}
+	APIKEY := r.FormValue("APIKEY")
+	FILEID := r.FormValue("FILEID")
+	enableCors(&w)
+
+	genurl := "https://lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/file/"+FILEID+".xml"
+
+	req, err := http.NewRequest("GET", genurl, nil)
+	if err != nil {
+		fmt.Println(err)
+	}
+	req.Host = "lairdassessors.swiftcase.co.uk"
+	req.Header.Set("Cache-Control", "no-cache")
+	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
+	req.Header.Set("Accept", "*/*")
+	req.Header.Set("Connection", "close")
+
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer resp.Body.Close()
+	responseData, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API URL: "+genurl+"\n")
+
+
+
+	type File struct {
+		XMLName xml.Name `xml:"file"`
+		Text    string   `xml:",chardata"`
+		ID      string   `xml:"id"`
+		Name    string   `xml:"name"`
+		Type    string   `xml:"type"`
+		Data    string   `xml:"data"`
+	}
+
+
+	var q File
+
+
+	xml.Unmarshal(responseData,&q)
+	decoded, err := base64.StdEncoding.DecodeString(q.Data)
+	if err != nil {
+		fmt.Println("decode error:", err)
+		return
+	}
+	file := q.Name
+
+	content := bytes.NewReader(decoded)
+
+
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	//copy the relevant headers. If you want to preserve the downloaded file name, extract it with go's url parser.
+	w.Header().Set("Content-Disposition", "attachment; filename="+file+"")
+	w.Header().Set("Content-Type", r.Header.Get("Content-Type"))
+	w.Header().Set("Content-Length", r.Header.Get("Content-Length"))
+
+	//stream the body to the client without fully loading it into memory
+	io.Copy(w, content)
+
+}
 
 
 
@@ -746,7 +901,9 @@ func tengineer(w http.ResponseWriter, r *http.Request) {
 
 	responseString := string(responseData)
 	space := strings.TrimLeft(responseString, "\r\n")
-	fmt.Fprint(w, space)
+	ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
+	result := ree.Replace(string(space))
+	fmt.Fprint(w, result)
 }
 
 func lengineer(w http.ResponseWriter, r *http.Request) {
@@ -792,7 +949,9 @@ func lengineer(w http.ResponseWriter, r *http.Request) {
 
 	responseString := string(responseData)
 	space := strings.TrimLeft(responseString, "\r\n")
-	fmt.Fprint(w, space)
+	ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
+	result := ree.Replace(string(space))
+	fmt.Fprint(w, result)
 }
 
 
@@ -907,6 +1066,7 @@ func main() {
 	http.HandleFunc("/test/sendfile", tsendfile)
 	http.HandleFunc("/test/getfile", tgetfile)
 	http.HandleFunc("/test/getfiles", tgetfiles)
+	http.HandleFunc("/test/downloadfile", tdownloadfile)
 
 	http.HandleFunc("/live/workflow", lworkflows)
 	http.HandleFunc("/live/status", lstatus)
@@ -917,6 +1077,7 @@ func main() {
 	http.HandleFunc("/live/sendfile", lsendfile)
 	http.HandleFunc("/live/getfile", lgetfile)
 	http.HandleFunc("/live/getfiles", lgetfiles)
+	http.HandleFunc("/live/downloadfile", ldownloadfile)
 
 
 
