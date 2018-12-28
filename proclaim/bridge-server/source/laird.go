@@ -2,8 +2,6 @@ package main
 
 // Laird Assessors API Bridge for Pro-claim users
 //
-// This is a early beta and may lack proper errors
-//
 // Made By Robert Wiggins (robert.wiggins@laird-assessors.com)
 //
 // Any Errors please provide the full request to assist me in diagnosing the issue
