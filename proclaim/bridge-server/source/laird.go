@@ -18,6 +18,7 @@ import (
 	"io"
 	"io/ioutil"
 	"log"
+	"net"
 	"net/http"
 	"os"
 	"os/signal"
@@ -33,6 +34,69 @@ var port= flag.String("port", "5050", "Webserver port other than 5050")
 
 func enableCors(w *http.ResponseWriter) {
 	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+
+}
+
+
+func thealth (w http.ResponseWriter, r *http.Request) {
+
+
+	var netTransport = &http.Transport{
+		Dial: (&net.Dialer{
+			Timeout: 5 * time.Second,
+		}).Dial,
+		TLSHandshakeTimeout: 5 * time.Second,
+	}
+	var netClient = &http.Client{
+		Timeout:   time.Second * 10,
+		Transport: netTransport,
+	}
+
+	resp, err := netClient.Get("https://test-lairdassessors.swiftcase.co.uk")
+	if err != nil {
+		fmt.Printf("Laird API Status: Unhealthy\n")
+		fmt.Fprint(w, "Unhealthy")
+		return
+	}
+
+
+
+	defer resp.Body.Close()
+	fmt.Printf("Laird API Status: Healthy\n")
+	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
+	fmt.Fprint(w, "Healthy")
+
+}
+
+
+
+
+func lhealth (w http.ResponseWriter, r *http.Request) {
+
+	var netTransport = &http.Transport{
+		Dial: (&net.Dialer{
+			Timeout: 5 * time.Second,
+		}).Dial,
+		TLSHandshakeTimeout: 5 * time.Second,
+	}
+	var netClient = &http.Client{
+		Timeout:   time.Second * 10,
+		Transport: netTransport,
+	}
+
+	resp, err := netClient.Get("https://lairdassessors.swiftcase.co.uk")
+	if err != nil {
+		fmt.Printf("Laird API Status: Unhealthy\n")
+		fmt.Fprint(w, "Unhealthy")
+		return
+	}
+
+
+
+	defer resp.Body.Close()
+	fmt.Printf("Laird API Status: Healthy\n")
+	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
+	fmt.Fprint(w, "Healthy")
 
 }
 
@@ -1095,6 +1159,8 @@ func main() {
 	http.HandleFunc("/test/getfile", tgetfile)
 	http.HandleFunc("/test/getfiles", tgetfiles)
 	http.HandleFunc("/test/downloadfile", tdownloadfile)
+	http.HandleFunc("/test/health", thealth)
+
 
 	http.HandleFunc("/live/workflow", lworkflows)
 	http.HandleFunc("/live/status", lstatus)
@@ -1106,6 +1172,8 @@ func main() {
 	http.HandleFunc("/live/getfile", lgetfile)
 	http.HandleFunc("/live/getfiles", lgetfiles)
 	http.HandleFunc("/live/downloadfile", ldownloadfile)
+	http.HandleFunc("/live/health", lhealth)
+
 
 
 
