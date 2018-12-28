@@ -7,7 +7,8 @@ package main
 // Made By Robert Wiggins (robert.wiggins@laird-assessors.com)
 //
 // Any Errors please provide the full request to assist me in diagnosing the issue
-//
+// 
+// The system will show urls and errors in the cli.
 
 import (
 	"bytes"
