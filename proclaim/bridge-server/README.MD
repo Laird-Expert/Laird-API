@@ -7,6 +7,8 @@ I have attached some pre-compiled binarys but if you have go installed you can c
 
 You can run the binary and add --port 5555 if you wish to start the bridge server on another port other than 5050
 
+Logging can be seen via the CLI to see if there are any issues.
+
 
 ### Endpoints
 
