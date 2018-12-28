@@ -422,7 +422,7 @@ func lbengineer(w http.ResponseWriter, r *http.Request) {
 	xmlpost := bytes.NewBuffer(joineddata)
 
 
-	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task/"+TASK+"/allocate-resource.xml"
+	genurl := "https://lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task/"+TASK+"/allocate-resource.xml"
 
 	req, _ := http.NewRequest("POST", genurl, xmlpost)
 	resp, err := http.DefaultClient.Do(req)
@@ -436,18 +436,33 @@ func lbengineer(w http.ResponseWriter, r *http.Request) {
 	}
 	if resp.StatusCode == 201 {
 		w.Header().Set("Content-Type", "application/xml")
+		w.WriteHeader(resp.StatusCode)
+		ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
+		result := ree.Replace(string(responseData))
+
+		responseString := string(result)
+		fmt.Fprint(w, responseString)
+	} else if resp.StatusCode == 204 {
+		w.Header().Set("Content-Type", "application/xml")
+		w.WriteHeader(200)
+		var toppart2 = `<?xml version="1.0" encoding="UTF-8"?>`
+		rawXmlData2 := "\n<resourceAvailability>\n<availability>No Engineer Available</availability>\n</resourceAvailability>"
+		joineddata2 := []byte(""+toppart2+""+rawXmlData2+"")
+		responseString2 := string(joineddata2)
+		fmt.Fprint(w, responseString2)
+
+	} else {
+		responseString := string(responseData)
+		fmt.Fprint(w, responseString)
 	}
 
-	w.WriteHeader(resp.StatusCode)
+
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 
 
-	ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
-	result := ree.Replace(string(responseData))
 
-	responseString := string(result)
-	fmt.Fprint(w, responseString)
+
 
 
 }
@@ -487,18 +502,31 @@ func tbengineer(w http.ResponseWriter, r *http.Request) {
 	}
 	if resp.StatusCode == 201 {
 		w.Header().Set("Content-Type", "application/xml")
+		w.WriteHeader(resp.StatusCode)
+		ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
+		result := ree.Replace(string(responseData))
+
+		responseString := string(result)
+		fmt.Fprint(w, responseString)
+	} else if resp.StatusCode == 204 {
+		w.Header().Set("Content-Type", "application/xml")
+		w.WriteHeader(200)
+		var toppart2 = `<?xml version="1.0" encoding="UTF-8"?>`
+		rawXmlData2 := "\n<resourceAvailability>\n<availability>No Engineer Available</availability>\n</resourceAvailability>"
+		joineddata2 := []byte(""+toppart2+""+rawXmlData2+"")
+		responseString2 := string(joineddata2)
+		fmt.Fprint(w, responseString2)
+
+	} else {
+		responseString := string(responseData)
+		fmt.Fprint(w, responseString)
 	}
 
-	w.WriteHeader(resp.StatusCode)
+
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 
 
-	ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
-	result := ree.Replace(string(responseData))
-
-	responseString := string(result)
-	fmt.Fprint(w, responseString)
 
 
 
