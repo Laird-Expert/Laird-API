@@ -169,3 +169,18 @@ Content-Length: 768
    </data>
 </request>
 ```
+
+### Health Check
+
+This will confirm the laird api is up and running.
+
+Returning healthy or unhealthy depending on status.
+
+```
+http://localhost:5050/live/health
+```
+
+```
+http://localhost:5050/test/health
+```
+
