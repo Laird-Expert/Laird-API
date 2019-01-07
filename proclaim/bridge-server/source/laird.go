@@ -809,7 +809,7 @@ func tworkflows(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	APIKEY := r.FormValue("APIKEY")
-	ID := r.FormValue("ID")
+
 	enableCors(&w)
 
 
