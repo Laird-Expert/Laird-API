@@ -813,6 +813,130 @@ func tworkflows(w http.ResponseWriter, r *http.Request) {
 	enableCors(&w)
 
 
+	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/workflows.xml"
+
+	req, err := http.NewRequest("GET", genurl, nil)
+	if err != nil {
+		fmt.Println(err)
+	}
+	req.Host = "test-lairdassessors.swiftcase.co.uk"
+	req.Header.Set("Cache-Control", "no-cache")
+	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
+	req.Header.Set("Accept", "*/*")
+	req.Header.Set("Connection", "close")
+
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer resp.Body.Close()
+	responseData, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println(err)
+	}
+	if resp.StatusCode == 200 {
+		w.Header().Set("Content-Type", "application/xml")
+	}
+
+	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API URL:"+genurl+"\n")
+	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
+
+	responseString := string(responseData)
+	fmt.Fprint(w, responseString)
+
+}
+
+
+
+func lworkflows(w http.ResponseWriter, r *http.Request) {
+
+
+	if err := r.ParseForm(); err != nil {
+		fmt.Fprintf(w, "ParseForm() err: %v", err)
+		return
+	}
+	APIKEY := r.FormValue("APIKEY")
+	enableCors(&w)
+
+
+	genurl := "https://lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/workflows.xml"
+
+	req, err := http.NewRequest("GET", genurl, nil)
+	if err != nil {
+		fmt.Println(err)
+	}
+	req.Host = "lairdassessors.swiftcase.co.uk"
+	req.Header.Set("Cache-Control", "no-cache")
+	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
+	req.Header.Set("Accept", "*/*")
+	req.Header.Set("Connection", "close")
+
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer resp.Body.Close()
+	responseData, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println(err)
+	}
+	if resp.StatusCode == 200 {
+		w.Header().Set("Content-Type", "application/xml")
+	}
+
+	w.WriteHeader(resp.StatusCode)
+	fmt.Printf("Laird API URL:"+genurl+"\n")
+	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
+
+	responseString := string(responseData)
+	fmt.Fprint(w, responseString)
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+func tworkflow(w http.ResponseWriter, r *http.Request) {
+
+
+	if err := r.ParseForm(); err != nil {
+		fmt.Fprintf(w, "ParseForm() err: %v", err)
+		return
+	}
+	APIKEY := r.FormValue("APIKEY")
+	ID := r.FormValue("ID")
+	enableCors(&w)
+
+
 	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/workflow/"+ID+".xml"
 
 	req, err := http.NewRequest("GET", genurl, nil)
@@ -847,7 +971,7 @@ func tworkflows(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func lworkflows(w http.ResponseWriter, r *http.Request) {
+func lworkflow(w http.ResponseWriter, r *http.Request) {
 
 	if err := r.ParseForm(); err != nil {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
@@ -1172,8 +1296,8 @@ func main() {
 		fmt.Fprintf(w, "Laird Assesors API Brdige for Proclaim")
 	})
 
-
-	http.HandleFunc("/test/workflow", tworkflows)
+	http.HandleFunc("/test/workflows", tworkflows)
+	http.HandleFunc("/test/workflow", tworkflow)
 	http.HandleFunc("/test/status", tstatus)
 	http.HandleFunc("/test/engineer", tengineer)
 	http.HandleFunc("/test/bookengineer", tbengineer)
@@ -1185,8 +1309,8 @@ func main() {
 	http.HandleFunc("/test/downloadfile", tdownloadfile)
 	http.HandleFunc("/test/health", thealth)
 
-
-	http.HandleFunc("/live/workflow", lworkflows)
+	http.HandleFunc("/live/workflows", lworkflows)
+	http.HandleFunc("/live/workflow", lworkflow)
 	http.HandleFunc("/live/status", lstatus)
 	http.HandleFunc("/live/engineer", lengineer)
 	http.HandleFunc("/live/bookengineer", lbengineer)
