@@ -2,11 +2,12 @@ package main
 
 // Laird Assessors API Bridge for Pro-claim users
 //
+// This is a early beta and may lack proper errors
+//
 // Made By Robert Wiggins (robert.wiggins@laird-assessors.com)
 //
 // Any Errors please provide the full request to assist me in diagnosing the issue
-// 
-// The system will show urls and errors in the cli.
+//
 
 import (
 	"bytes"
@@ -54,7 +55,13 @@ func thealth (w http.ResponseWriter, r *http.Request) {
 	resp, err := netClient.Get("https://test-lairdassessors.swiftcase.co.uk")
 	if err != nil {
 		fmt.Printf("Laird API Status: Unhealthy\n")
-		fmt.Fprint(w, "Unhealthy")
+		w.Header().Set("Content-Type", "application/xml")
+		w.WriteHeader(200)
+		var toppart2 = `<?xml version="1.0" encoding="UTF-8"?>`
+		rawXmlData2 := "\n<Health>Unhealthy</Health>"
+		joineddata2 := []byte(""+toppart2+""+rawXmlData2+"")
+		responseString2 := string(joineddata2)
+		fmt.Fprint(w, responseString2)
 		return
 	}
 
@@ -63,7 +70,13 @@ func thealth (w http.ResponseWriter, r *http.Request) {
 	defer resp.Body.Close()
 	fmt.Printf("Laird API Status: Healthy\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	fmt.Fprint(w, "Healthy")
+	w.Header().Set("Content-Type", "application/xml")
+	w.WriteHeader(200)
+	var toppart2 = `<?xml version="1.0" encoding="UTF-8"?>`
+	rawXmlData2 := "\n<Health>Healthy</Health>"
+	joineddata2 := []byte(""+toppart2+""+rawXmlData2+"")
+	responseString2 := string(joineddata2)
+	fmt.Fprint(w, responseString2)
 
 }
 
@@ -86,7 +99,13 @@ func lhealth (w http.ResponseWriter, r *http.Request) {
 	resp, err := netClient.Get("https://lairdassessors.swiftcase.co.uk")
 	if err != nil {
 		fmt.Printf("Laird API Status: Unhealthy\n")
-		fmt.Fprint(w, "Unhealthy")
+		w.Header().Set("Content-Type", "application/xml")
+		w.WriteHeader(200)
+		var toppart2 = `<?xml version="1.0" encoding="UTF-8"?>`
+		rawXmlData2 := "\n<root>\n<health>Unhealthy</health>\n</root>"
+		joineddata2 := []byte(""+toppart2+""+rawXmlData2+"")
+		responseString2 := string(joineddata2)
+		fmt.Fprint(w, responseString2)
 		return
 	}
 
@@ -95,7 +114,13 @@ func lhealth (w http.ResponseWriter, r *http.Request) {
 	defer resp.Body.Close()
 	fmt.Printf("Laird API Status: Healthy\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
-	fmt.Fprint(w, "Healthy")
+	w.Header().Set("Content-Type", "application/xml")
+	w.WriteHeader(200)
+	var toppart2 = `<?xml version="1.0" encoding="UTF-8"?>`
+	rawXmlData2 := "\n<root>\n<health>Unhealthy</health>\n</root>"
+	joineddata2 := []byte(""+toppart2+""+rawXmlData2+"")
+	responseString2 := string(joineddata2)
+	fmt.Fprint(w, responseString2)
 
 }
 
@@ -110,7 +135,7 @@ func lgetfiles(w http.ResponseWriter, r *http.Request) {
 	TASK := r.FormValue("TASK")
 	enableCors(&w)
 
-	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task/"+TASK+"/files.xml"
+	genurl := "https://lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task/"+TASK+"/files.xml"
 
 	req, err := http.NewRequest("GET", genurl, nil)
 	if err != nil {
