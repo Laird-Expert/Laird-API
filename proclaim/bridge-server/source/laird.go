@@ -117,7 +117,7 @@ func lhealth (w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/xml")
 	w.WriteHeader(200)
 	var toppart2 = `<?xml version="1.0" encoding="UTF-8"?>`
-	rawXmlData2 := "\n<root>\n<health>Unhealthy</health>\n</root>"
+	rawXmlData2 := "\n<root>\n<health>Healthy</health>\n</root>"
 	joineddata2 := []byte(""+toppart2+""+rawXmlData2+"")
 	responseString2 := string(joineddata2)
 	fmt.Fprint(w, responseString2)
