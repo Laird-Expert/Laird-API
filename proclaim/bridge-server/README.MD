@@ -86,6 +86,19 @@ https://localhost:5050/test/taskdetails?APIKEY=YOURAPIKEY&TASK=YOURTASKID
 https://localhost:5050/live/taskdetails?APIKEY=YOURAPIKEY&TASK=YOURTASKID
 ```
 
+
+### Example of Workflows
+
+
+```
+https://localhost:5050/test/workflows?APIKEY=YOURAPIKEY
+```
+
+```
+https://localhost:5050/live/workflows?APIKEY=YOURAPIKEY
+```
+
+
 ### Example of Workflow Questions
 
 
