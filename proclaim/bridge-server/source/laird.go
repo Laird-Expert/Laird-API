@@ -597,7 +597,9 @@ func tbengineer(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(resp.StatusCode)
 		ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
 		result := ree.Replace(string(responseData))
-		fmt.Fprint(w, result)
+		ree2 := strings.NewReplacer("<result>", "<resourceAvailability>\n<availability>","</result>","</availability>\n</resourceAvailability>")
+		result2 := ree2.Replace(string(result))
+		fmt.Fprint(w, result2)
 
 		responseString := string(result)
 		fmt.Fprint(w, responseString)
@@ -615,7 +617,9 @@ func tbengineer(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(resp.StatusCode)
 		ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
 		result := ree.Replace(string(responseData))
-		fmt.Fprint(w, result)
+		ree2 := strings.NewReplacer("<result>", "<resourceAvailability>\n<availability>","</result>","</availability>\n</resourceAvailability>")
+		result2 := ree2.Replace(string(result))
+		fmt.Fprint(w, result2)
 	}
 
 
