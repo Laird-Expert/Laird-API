@@ -527,6 +527,7 @@ func lbengineer(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(resp.StatusCode)
 		ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
 		result := ree.Replace(string(responseData))
+		fmt.Fprint(w, result)
 
 		responseString := string(result)
 		fmt.Fprint(w, responseString)
@@ -544,6 +545,7 @@ func lbengineer(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(resp.StatusCode)
 		ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
 		result := ree.Replace(string(responseData))
+		fmt.Fprint(w, result)
 	}
 
 
@@ -595,6 +597,7 @@ func tbengineer(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(resp.StatusCode)
 		ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
 		result := ree.Replace(string(responseData))
+		fmt.Fprint(w, result)
 
 		responseString := string(result)
 		fmt.Fprint(w, responseString)
@@ -612,6 +615,7 @@ func tbengineer(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(resp.StatusCode)
 		ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
 		result := ree.Replace(string(responseData))
+		fmt.Fprint(w, result)
 	}
 
 
