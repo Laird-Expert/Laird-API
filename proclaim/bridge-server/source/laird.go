@@ -540,8 +540,10 @@ func lbengineer(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprint(w, responseString2)
 
 	} else {
-		responseString := string(responseData)
-		fmt.Fprint(w, responseString)
+		w.Header().Set("Content-Type", "application/xml")
+		w.WriteHeader(resp.StatusCode)
+		ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
+		result := ree.Replace(string(responseData))
 	}
 
 
@@ -606,8 +608,10 @@ func tbengineer(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprint(w, responseString2)
 
 	} else {
-		responseString := string(responseData)
-		fmt.Fprint(w, responseString)
+		w.Header().Set("Content-Type", "application/xml")
+		w.WriteHeader(resp.StatusCode)
+		ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
+		result := ree.Replace(string(responseData))
 	}
 
 
