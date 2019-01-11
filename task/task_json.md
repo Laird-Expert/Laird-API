@@ -33,7 +33,7 @@ Content-Type: application/json
 cache-control: no-cache
 User-Agent: PostmanRuntime/7.1.1
 Accept: */*
-Host: test2-lairdassessors.swiftcase.co.uk
+Host: test-lairdassessors.swiftcase.co.uk
 Accept-Encoding: gzip, deflate
 Connection: close
 
