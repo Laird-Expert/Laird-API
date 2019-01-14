@@ -126,30 +126,37 @@ https://localhost:5050/live/status?APIKEY=YOURAPIKEY&TASK=TASKID
 
 ```
 POST /test/task?APIKEY=YOURAPIKEY HTTP/1.1
-Host: 127.0.0.1
 Content-Type: text/xml
 cache-control: no-cache
-Content-Length: 768
+User-Agent: PostmanRuntime/7.6.0
+Accept: */*
+Host: 127.0.0.1
+Accept-Encoding: gzip, deflate
+Content-Length: 1382
+Connection: close
 
 <?xml version="1.0" encoding="UTF-8"?>
 <request>
-   <workflow_type_id>210</workflow_type_id>
+   <workflow_type_id>70</workflow_type_id>
    <data>
-	   <item name="principal_reference"></item>
-	   <item name="internal_reference"></item>
-	   <item name="vehicle_registration"></item>
-	   <item name="glass_evaluator_code"></item>
-	   <item name="vehicle_comments"></item>
-	   <item name="confirmed_mileage"></item>
-	   <item name="confirmed_mileage_units"></item>
-	   <item name="road_tax"></item>
-	   <item name="repairable_total_loss"></item>
-	   <item name="value_of_vehicle"></item>
-	   <item name="salvage_value"></item>
-	   <item name="trade_value"></item>
-	   <item name="retail_value"></item>
-	   <item name="gearbox"></item>
-	   <item name="listed_extras"></item>
+	   <item name="client_staff_email">lee.baty@laird-assessors.com</item>
+	   <item name="principal_reference">LBATY CRASH</item>
+	   <item name="inspection_contact_phone">01513429961</item>
+	  <item name="inspection_contact_mobile">01513429961</item>
+	   <item name="contact_for_inspection">Lee Baty</item>
+	   <item name="accident_date">01/01/2019</item>
+	   <item name="area_of_damage_to_vehicle_reported">rear</item>
+	   <item name="contact_for_inspection">Mr Lee Baty</item>
+	   <item name="client_first_name">Lee</item>
+	   <item name="client_second_name">Baty</item>
+	   <item name="client_mobile">0777777777</item>
+	   <item name="client_phone_notes">ring after 5pm</item>
+	   <item name="vehicle_registration">&lt;registration&gt;W705ACW&lt;/registration&gt;</item>
+	   <item name="agent_special_instructions">Knock around the rear</item>
+	   <item name="principal_comments">Car was turning left when other car collideded in to the side</item>
+	   <item name="file_referrer">Turner and Hooch</item>
+	   <item name="client_salutation">Mr</item>
+	   <item name="inspection_address"><postcode>PO1 0DE</postcode><first_line>First line</first_line><second_line>Second Line</second_line><town>TOWN</town><county>COUNTY</county></item>
    </data>
 </request>
 ```
@@ -164,23 +171,26 @@ Content-Length: 768
 
 <?xml version="1.0" encoding="UTF-8"?>
 <request>
-   <workflow_type_id>210</workflow_type_id>
+   <workflow_type_id>70</workflow_type_id>
    <data>
-	   <item name="principal_reference"></item>
-	   <item name="internal_reference"></item>
-	   <item name="vehicle_registration"></item>
-	   <item name="glass_evaluator_code"></item>
-	   <item name="vehicle_comments"></item>
-	   <item name="confirmed_mileage"></item>
-	   <item name="confirmed_mileage_units"></item>
-	   <item name="road_tax"></item>
-	   <item name="repairable_total_loss"></item>
-	   <item name="value_of_vehicle"></item>
-	   <item name="salvage_value"></item>
-	   <item name="trade_value"></item>
-	   <item name="retail_value"></item>
-	   <item name="gearbox"></item>
-	   <item name="listed_extras"></item>
+	   <item name="client_staff_email">lee.baty@laird-assessors.com</item>
+	   <item name="principal_reference">LBATY CRASH</item>
+	   <item name="inspection_contact_phone">01513429961</item>
+	  <item name="inspection_contact_mobile">01513429961</item>
+	   <item name="contact_for_inspection">Lee Baty</item>
+	   <item name="accident_date">01/01/2019</item>
+	   <item name="area_of_damage_to_vehicle_reported">rear</item>
+	   <item name="contact_for_inspection">Mr Lee Baty</item>
+	   <item name="client_first_name">Lee</item>
+	   <item name="client_second_name">Baty</item>
+	   <item name="client_mobile">0777777777</item>
+	   <item name="client_phone_notes">ring after 5pm</item>
+	   <item name="vehicle_registration">&lt;registration&gt;W705ACW&lt;/registration&gt;</item>
+	   <item name="agent_special_instructions">Knock around the rear</item>
+	   <item name="principal_comments">Car was turning left when other car collideded in to the side</item>
+	   <item name="file_referrer">Turner and Hooch</item>
+	   <item name="client_salutation">Mr</item>
+	   <item name="inspection_address"><postcode>PO1 0DE</postcode><first_line>First line</first_line><second_line>Second Line</second_line><town>TOWN</town><county>COUNTY</county></item>
    </data>
 </request>
 ```
