@@ -57,7 +57,7 @@ Connection: close
 		},
 		{
 			"name": "accident_date",
-			"value": "5//5/2017"
+			"value": "5/5/2017"
 		},
 		{
 			"name": "area_of_damage_to_vehicle_reported",
