@@ -105,8 +105,9 @@ Connection: close
 			"name": "client_second_value"
 		},
 		{
-			"value": "CH607RJ",
+			"value": "{\"postcode\":\"CH47 4BP\",\"first_line\":\"188 - 200 Whitfield Buildings\",\"second_line\":\"Pensby\",\"town\":\"Pensby\",\"county\":\"Wirral\"}",
 			"name": "client_postcode"
+
 		},
 		{
 			"value": "lee.baty@laird-assessors.com",
