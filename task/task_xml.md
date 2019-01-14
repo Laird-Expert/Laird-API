@@ -35,6 +35,7 @@ Cache-Control: no-cache
 	   <item name="client_staff_email">lee.baty@laird-assessors.com</item>
 	   <item name="principal_reference">LBATY CRASH</item>
 	   <item name="inspection_contact_phone">01513429961</item>
+	   <item name="inspection_contact_mobile">077777777</item>
 	   <item name="contact_for_inspection">Lee Baty</item>
 	   <item name="accident_date">01/01/2019</item>
 	   <item name="area_of_damage_to_vehicle_reported">rear</item>
