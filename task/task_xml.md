@@ -32,13 +32,23 @@ Cache-Control: no-cache
 <request>
    <workflow_type_id>70</workflow_type_id>
    <data>
-	   <item name="client_staff_email">test@test.com</item>
-	   <item name="principal_reference">YOUR REFERENCE/item>
-	   <item name="inspection_contact_phone">inspection-phone</item>
-	   <item name="contact_for_inspection">inspection-contact-name</item>
-	   <item name="accident_date">1/5/2017</item>
-	   <item name="area_of_damage_to_vehicle_reported">area-of-damage</item>
+	   <item name="client_staff_email">lee.baty@laird-assessors.com</item>
+	   <item name="principal_reference">LBATY CRASH</item>
+	   <item name="inspection_contact_phone">01513429961</item>
+	   <item name="contact_for_inspection">Lee Baty</item>
+	   <item name="accident_date">01/01/2019</item>
+	   <item name="area_of_damage_to_vehicle_reported">rear</item>
+	   <item name="contact_for_inspection">Mr Lee Baty</item>
+	   <item name="client_first_name">Lee</item>
+	   <item name="client_second_name">Baty</item>
+	   <item name="client_mobile">0777777777</item>
+	   <item name="client_phone_notes">ring after 5pm</item>
 	   <item name="vehicle_registration">&lt;registration&gt;W705ACW&lt;/registration&gt;</item>
+	   <item name="agent_special_instructions">Knock around the rear</item>
+	   <item name="principal_comments">Car was turning left when other car collideded in to the side</item>
+	   <item name="file_referrer">Turner and Hooch</item>
+	   <item name="client_salutation">Mr</item>
+	   <item name="inspection_address">&lt;postcode&gt;PO1 0DE&lt;/postcode&gt;&lt;first_line&gt;First line&lt;/first_line&gt;&lt;second_line&gt;Second Line&lt;/second_line&gt;&lt;town&gt;TOWN&lt;/town&gt;&lt;county&gt;COUNTY&lt;/county&gt;</item>
    </data>
 </request>
 ```
@@ -47,21 +57,31 @@ Example Response
 --------
 
 ```
+<?xml version="1.0" encoding="UTF-8"?>
 <task>
-    <id>700110</id>
+    <id>659748</id>
     <data>
-        <item name="principal_reference">reference</item>
-        <item name="inspection_contact_phone">inspection-phone</item>
-        <item name="accident_date">2017-05-01</item>
-        <item name="area_of_damage_to_vehicle_reported">area-of-damage</item>
-        <item name="contact_for_inspection">inspection-contact-name</item>
-        <item name="internal_reference">18-700106</item>
-	
+        <item name="principal_reference">LBATY CRASH</item>
+        <item name="accident_date">2019-01-01</item>
+        <item name="area_of_damage_to_vehicle_reported">rear</item>
+        <item name="agent_special_instructions">Knock around the rear</item>
+        <item name="principal_comments">Car was turning left when other car collideded in to the side</item>
+        <item name="file_referrer">Turner and Hooch</item>
+        <item name="inspection_contact_phone">01513429961</item>
+        <item name="contact_for_inspection">Mr Lee Baty</item>
+        <item name="vehicle_registration">W705ACW</item>
+        <item name="inspection_address">PO1 0DE</item>
+        <item name="client_first_name">Lee</item>
+        <item name="client_second_name">Baty</item>
+        <item name="client_mobile">0777777777</item>
+        <item name="client_phone_notes">ring after 5pm</item>
+        <item name="client_salutation">Mr</item>
+        <item name="internal_reference">19-626131</item>
     </data>
     <fees>
-        <net>100.00</net>
-        <vat>100.00</vat>
-        <gross>100.00</gross>
+        <net>0.00</net>
+        <vat>0.00</vat>
+        <gross>0.00</gross>
     </fees>
     <status>
         <status>Instruction Received</status>
@@ -69,22 +89,22 @@ Example Response
     <taskUsers>
         <taskUser>
             <user>
-                <id>1401</id>
-                <name>Your Company Name</name>
+                <id>6000343</id>
+                <name>1 High Priority Client Testing Company TEST</name>
             </user>
             <relationship>Client</relationship>
         </taskUser>
         <taskUser>
             <user>
-                <id>1401</id>
-                <name>Your Company Name</name>
+                <id>6000343</id>
+                <name>1 High Priority Client Testing Company TEST</name>
             </user>
             <relationship>Client staff</relationship>
         </taskUser>
         <taskUser>
             <user>
                 <id>6001885</id>
-                <name>Expert, Laird</name>
+                <name>Adams, Liam</name>
             </user>
             <relationship>Owner</relationship>
         </taskUser>
