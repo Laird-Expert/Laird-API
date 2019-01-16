@@ -35,7 +35,7 @@ Cache-Control: no-cache
 	   <item name="client_staff_email">lee.baty@laird-assessors.com</item>
 	   <item name="principal_reference">LBATY CRASH</item>
 	   <item name="inspection_contact_phone">01513429961</item>
-	   <item name="inspection_contact_mobile">077777777</item>
+	   <item name="inspection_contact_mobile">01513429961</item>
 	   <item name="contact_for_inspection">Lee Baty</item>
 	   <item name="accident_date">01/01/2019</item>
 	   <item name="area_of_damage_to_vehicle_reported">rear</item>
@@ -43,6 +43,7 @@ Cache-Control: no-cache
 	   <item name="client_first_name">Lee</item>
 	   <item name="client_second_name">Baty</item>
 	   <item name="client_mobile">0777777777</item>
+	   <item name="client_postcode">&lt;first_line&gt;First line&lt;/first_line&gt;&lt;second_line&gt;Second Line&lt;/second_line&gt;&lt;town&gt;TOWN&lt;/town&gt;&lt;county&gt;COUNTY&lt;/county&gt;</item>
 	   <item name="client_phone_notes">ring after 5pm</item>
 	   <item name="vehicle_registration">&lt;registration&gt;W705ACW&lt;/registration&gt;</item>
 	   <item name="agent_special_instructions">Knock around the rear</item>
