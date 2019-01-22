@@ -22,6 +22,7 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	"regexp"
 	"strings"
 	"syscall"
 	"time"
@@ -646,11 +647,9 @@ func ttask(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-
 	ree := strings.NewReplacer("<registration>", "&lt;registration&gt;", "</registration>", "&lt;/registration&gt;","<postcode>","&lt;postcode&gt;" ,"</postcode>","&lt;/postcode&gt;","<first_line>","&lt;first_line&gt;","</first_line>","&lt;/first_line&gt;","<second_line>","&lt;second_line&gt;","</second_line>","&lt;/second_line&gt;","<town>","&lt;town&gt;","</town>","&lt;/town&gt;","<county>","&lt;county&gt;","</county>","&lt;/county&gt;")
 	result := ree.Replace(string(b))
 	xmlpost := bytes.NewReader([]byte(result))
-	//fmt.Printf(result)
 
 	genurl := "https://test-lairdassessors.swiftcase.co.uk/api/v2/"+APIKEY+"/task.xml"
 
@@ -673,7 +672,28 @@ func ttask(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 
 	responseString := string(responseData)
-	fmt.Fprint(w, responseString)
+	rf := regexp.MustCompile(`<item name="internal_reference">(.+)?<\/item>`)
+	res := rf.FindStringSubmatch(string(responseString))
+
+	if (len(res) > 0) {
+		match := string(res[1])
+		ree2 := strings.NewReplacer("</data>", "</data>\t\n<internal_reference>"+match+"</internal_reference>")
+		result := ree2.Replace(string(responseString))
+		fmt.Fprint(w, result)
+
+	} else {
+		fmt.Fprint(w, responseString)
+	}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -804,7 +824,24 @@ func ltask(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 
 	responseString := string(responseData)
-	fmt.Fprint(w, responseString)
+	rf := regexp.MustCompile(`<item name="internal_reference">(.+)?<\/item>`)
+	res := rf.FindStringSubmatch(string(responseString))
+
+	if (len(res) > 0) {
+		match := string(res[1])
+		ree2 := strings.NewReplacer("</data>", "</data>\t\n<internal_reference>"+match+"</internal_reference>")
+		result := ree2.Replace(string(responseString))
+		fmt.Fprint(w, result)
+
+	} else {
+		fmt.Fprint(w, responseString)
+	}
+
+
+
+
+
+
 
 
 
