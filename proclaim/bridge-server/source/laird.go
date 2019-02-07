@@ -190,7 +190,6 @@ func tgetfiles(w http.ResponseWriter, r *http.Request) {
 
 		fmt.Println(err)
 	}
-	req.Host = "test-lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
@@ -240,7 +239,6 @@ func tdownloadfile(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	req.Host = "test-lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
@@ -528,7 +526,9 @@ func lbengineer(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(resp.StatusCode)
 		ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
 		result := ree.Replace(string(responseData))
-		fmt.Fprint(w, result)
+		ree2 := strings.NewReplacer("<result>", "<resourceAvailability>\n<id>"+BOOKID+"</id>\n<availability>","</result>","</availability>\n</resourceAvailability>")
+		result2 := ree2.Replace(string(result))
+		fmt.Fprint(w, result2)
 
 		responseString := string(result)
 		fmt.Fprint(w, responseString)
@@ -536,7 +536,7 @@ func lbengineer(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/xml")
 		w.WriteHeader(200)
 		var toppart2 = `<?xml version="1.0" encoding="UTF-8"?>`
-		rawXmlData2 := "\n<resourceAvailability>\n<availability>No Engineer Available</availability>\n</resourceAvailability>"
+		rawXmlData2 := "\n<resourceAvailability>\n<id>"+BOOKID+"</id>\n<availability>No Engineer Available</availability>\n</resourceAvailability>"
 		joineddata2 := []byte(""+toppart2+""+rawXmlData2+"")
 		responseString2 := string(joineddata2)
 		fmt.Fprint(w, responseString2)
@@ -546,12 +546,17 @@ func lbengineer(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(resp.StatusCode)
 		ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
 		result := ree.Replace(string(responseData))
-		fmt.Fprint(w, result)
+		ree2 := strings.NewReplacer("<result>", "<resourceAvailability>\n<availability>","</result>","</availability>\n</resourceAvailability>")
+		result2 := ree2.Replace(string(result))
+		fmt.Fprint(w, result2)
 	}
 
 
 	fmt.Printf("Laird API URL:"+genurl+"\n")
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
+
+
+
 
 
 
@@ -598,7 +603,7 @@ func tbengineer(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(resp.StatusCode)
 		ree := strings.NewReplacer("<![CDATA[", "", "]]>", "")
 		result := ree.Replace(string(responseData))
-		ree2 := strings.NewReplacer("<result>", "<resourceAvailability>\n<availability>","</result>","</availability>\n</resourceAvailability>")
+		ree2 := strings.NewReplacer("<result>", "<resourceAvailability>\n<id>"+BOOKID+"</id>\n<availability>","</result>","</availability>\n</resourceAvailability>")
 		result2 := ree2.Replace(string(result))
 		fmt.Fprint(w, result2)
 
@@ -608,7 +613,7 @@ func tbengineer(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/xml")
 		w.WriteHeader(200)
 		var toppart2 = `<?xml version="1.0" encoding="UTF-8"?>`
-		rawXmlData2 := "\n<resourceAvailability>\n<availability>No Engineer Available</availability>\n</resourceAvailability>"
+		rawXmlData2 := "\n<resourceAvailability>\n<id>"+BOOKID+"</id>\n<availability>No Engineer Available</availability>\n</resourceAvailability>"
 		joineddata2 := []byte(""+toppart2+""+rawXmlData2+"")
 		responseString2 := string(joineddata2)
 		fmt.Fprint(w, responseString2)
@@ -868,7 +873,7 @@ func tworkflows(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	req.Host = "test-lairdassessors.swiftcase.co.uk"
+
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
@@ -915,7 +920,7 @@ func lworkflows(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	req.Host = "lairdassessors.swiftcase.co.uk"
+
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
@@ -992,7 +997,7 @@ func tworkflow(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	req.Host = "test-lairdassessors.swiftcase.co.uk"
+
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
@@ -1036,7 +1041,7 @@ func lworkflow(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	req.Host = "lairdassessors.swiftcase.co.uk"
+
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
@@ -1079,7 +1084,7 @@ func tstatus(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	req.Host = "test-lairdassessors.swiftcase.co.uk"
+
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
@@ -1121,7 +1126,7 @@ func lstatus(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	req.Host = "lairdassessors.swiftcase.co.uk"
+
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
@@ -1166,7 +1171,7 @@ func tengineer(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	req.Host = "test-lairdassessors.swiftcase.co.uk"
+
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
@@ -1213,7 +1218,7 @@ func lengineer(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	req.Host = "lairdassessors.swiftcase.co.uk"
+
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
@@ -1262,7 +1267,6 @@ func ttaskdetails(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	req.Host = "test-lairdassessors.swiftcase.co.uk"
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
@@ -1309,7 +1313,7 @@ func ltaskdetails(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	req.Host = "lairdassessors.swiftcase.co.uk"
+
 	req.Header.Set("Cache-Control", "no-cache")
 	req.Header.Set("User-Agent", "Laird API Bridge GoLang")
 	req.Header.Set("Accept", "*/*")
@@ -1396,4 +1400,3 @@ func main() {
 	}
 
 }
-
