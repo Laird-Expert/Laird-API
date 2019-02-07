@@ -19,11 +19,11 @@ Logging can be seen via the CLI to see if there are any issues.
 
 
 ```
-https://localhost:5050/test/engineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOURDATE&maxresult=15
+http://localhost:5050/test/engineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOURDATE&maxresult=15
 ```
 
 ```
-https://localhost:5050/live/engineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOURDATE&maxresult=15
+http://localhost:5050/live/engineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOURDATE&maxresult=15
 ```
 
 
@@ -31,22 +31,22 @@ https://localhost:5050/live/engineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOU
 
 
 ```
-https://localhost:5050/test/bookengineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOURDATE&BOOKID=1512312
+http://localhost:5050/test/bookengineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOURDATE&BOOKID=1512312
 ```
 
 ```
-https://localhost:5050/live/bookengineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOURDATE&BOOKID=1231231
+http://localhost:5050/live/bookengineer?APIKEY=YOURAPIKEY&TASK=YOURTASKID&IDATE=YOURDATE&BOOKID=1231231
 ```
 
 ### Example of Get Files
 
 
 ```
-https://localhost:5050/test/getfiles?APIKEY=YOURAPIKEY&TASK=YOURTASKID
+http://localhost:5050/test/getfiles?APIKEY=YOURAPIKEY&TASK=YOURTASKID
 ```
 
 ```
-https://localhost:5050/live/getfiles?APIKEY=YOURAPIKEY&TASK=YOURTASKID
+http://localhost:5050/live/getfiles?APIKEY=YOURAPIKEY&TASK=YOURTASKID
 ```
 
 
@@ -54,11 +54,11 @@ https://localhost:5050/live/getfiles?APIKEY=YOURAPIKEY&TASK=YOURTASKID
 
 
 ```
-https://localhost:5050/test/getfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
+http://localhost:5050/test/getfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
 ```
 
 ```
-https://localhost:5050/live/getfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
+http://localhost:5050/live/getfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
 ```
 
 
@@ -66,11 +66,11 @@ https://localhost:5050/live/getfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
 
 
 ```
-https://localhost:5050/test/downloadfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
+http://localhost:5050/test/downloadfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
 ```
 
 ```
-https://localhost:5050/live/downloadfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
+http://localhost:5050/live/downloadfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
 ```
 
 
@@ -79,11 +79,11 @@ https://localhost:5050/live/downloadfile?APIKEY=YOURAPIKEY&FILEID=YOURFILEID
 
 
 ```
-https://localhost:5050/test/taskdetails?APIKEY=YOURAPIKEY&TASK=YOURTASKID
+http://localhost:5050/test/taskdetails?APIKEY=YOURAPIKEY&TASK=YOURTASKID
 ```
 
 ```
-https://localhost:5050/live/taskdetails?APIKEY=YOURAPIKEY&TASK=YOURTASKID
+http://localhost:5050/live/taskdetails?APIKEY=YOURAPIKEY&TASK=YOURTASKID
 ```
 
 
@@ -91,11 +91,11 @@ https://localhost:5050/live/taskdetails?APIKEY=YOURAPIKEY&TASK=YOURTASKID
 
 
 ```
-https://localhost:5050/test/workflows?APIKEY=YOURAPIKEY
+http://localhost:5050/test/workflows?APIKEY=YOURAPIKEY
 ```
 
 ```
-https://localhost:5050/live/workflows?APIKEY=YOURAPIKEY
+http://localhost:5050/live/workflows?APIKEY=YOURAPIKEY
 ```
 
 
@@ -103,22 +103,22 @@ https://localhost:5050/live/workflows?APIKEY=YOURAPIKEY
 
 
 ```
-https://localhost:5050/test/workflow?APIKEY=YOURAPIKEY&ID=WORKFLOWID
+http://localhost:5050/test/workflow?APIKEY=YOURAPIKEY&ID=WORKFLOWID
 ```
 
 ```
-https://localhost:5050/live/workflow?APIKEY=YOURAPIKEY&ID=WORKFLOWID
+http://localhost:5050/live/workflow?APIKEY=YOURAPIKEY&ID=WORKFLOWID
 ```
 
 ### Example of Status
 
 
 ```
-https://localhost:5050/test/status?APIKEY=YOURAPIKEY&TASK=TASKID
+http://localhost:5050/test/status?APIKEY=YOURAPIKEY&TASK=TASKID
 ```
 
 ```
-https://localhost:5050/live/status?APIKEY=YOURAPIKEY&TASK=TASKID
+http://localhost:5050/live/status?APIKEY=YOURAPIKEY&TASK=TASKID
 ```
 
 
