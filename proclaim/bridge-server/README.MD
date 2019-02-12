@@ -121,6 +121,18 @@ http://localhost:5050/test/status?APIKEY=YOURAPIKEY&TASK=TASKID
 http://localhost:5050/live/status?APIKEY=YOURAPIKEY&TASK=TASKID
 ```
 
+### Example of upload files webpage
+
+
+```
+http://localhost:5050/test/upload?APIKEY=YOURAPIKEY&TASK=TASKID
+```
+
+```
+http://localhost:5050/live/upload?APIKEY=YOURAPIKEY&TASK=TASKID
+```
+
+
 
 ### Example of Task
 
