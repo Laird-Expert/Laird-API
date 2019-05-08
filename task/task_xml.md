@@ -43,14 +43,21 @@ Cache-Control: no-cache
 	   <item name="client_first_name">Lee</item>
 	   <item name="client_second_name">Baty</item>
 	   <item name="client_mobile">0777777777</item>
-	   <item name="client_postcode">&lt;first_line&gt;First line&lt;/first_line&gt;&lt;second_line&gt;Second Line&lt;/second_line&gt;&lt;town&gt;TOWN&lt;/town&gt;&lt;county&gt;COUNTY&lt;/county&gt;</item>
+	   <item name="inspection_address">
+	   <subitem name="postcode">CH47 4BP</subitem>
+	   <subitem name="first_line">Livepoint Software Solutions,7 New Hall Lane</subitem>
+	   <subitem name="second_line"></subitem>
+           <subitem name="town">Wirral</subitem>
+	   <subitem name="county">Merseyside</subitem>
+           <subitem name="longitude">-3.175673000000000</subitem>
+           <subitem name="latitude">53.389134000000000</subitem>
+           </item>
 	   <item name="client_phone_notes">ring after 5pm</item>
 	   <item name="vehicle_registration">&lt;registration&gt;W705ACW&lt;/registration&gt;</item>
 	   <item name="agent_special_instructions">Knock around the rear</item>
 	   <item name="principal_comments">Car was turning left when other car collideded in to the side</item>
 	   <item name="file_referrer">Turner and Hooch</item>
 	   <item name="client_salutation">Mr</item>
-	   <item name="inspection_address">&lt;postcode&gt;PO1 0DE&lt;/postcode&gt;&lt;first_line&gt;First line&lt;/first_line&gt;&lt;second_line&gt;Second Line&lt;/second_line&gt;&lt;town&gt;TOWN&lt;/town&gt;&lt;county&gt;COUNTY&lt;/county&gt;</item>
    </data>
 </request>
 ```
