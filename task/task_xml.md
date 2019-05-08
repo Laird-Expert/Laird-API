@@ -53,7 +53,7 @@ Cache-Control: no-cache
            <subitem name="latitude">53.389134000000000</subitem>
            </item>
 	   <item name="client_phone_notes">ring after 5pm</item>
-	   <item name="vehicle_registration">&lt;registration&gt;W705ACW&lt;/registration&gt;</item>
+	   <item name="vehicle_registration"><subitem name="registration">W705ACW</subitem></item>
 	   <item name="agent_special_instructions">Knock around the rear</item>
 	   <item name="principal_comments">Car was turning left when other car collideded in to the side</item>
 	   <item name="file_referrer">Turner and Hooch</item>
