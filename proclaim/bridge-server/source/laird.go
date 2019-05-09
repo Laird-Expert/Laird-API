@@ -2,9 +2,9 @@ package main
 
 // Laird Assessors API Bridge for Pro-claim users
 //
-// This is a early beta and may lack proper errors
+// V1.00
 //
-// Made By Robert Wiggins (robert.wiggins@laird-assessors.com)
+// Made By Robert Wiggins (support@laird-assessors.com)
 //
 // Any Errors please provide the full request to assist me in diagnosing the issue
 //
@@ -1408,7 +1408,8 @@ func tworkflow(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 
 	responseString := string(responseData)
-	fmt.Fprint(w, responseString)
+	ree := strings.Replace(responseString,"<name>Area Of Damage to Vehicle</name>", "<name>Area Of Damage to Vehicle Assessed</name>", 1)
+	fmt.Fprint(w, ree)
 
 }
 
@@ -1451,7 +1452,8 @@ func lworkflow(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Laird API Status Code Response: %d\n", resp.StatusCode)
 
 	responseString := string(responseData)
-	fmt.Fprint(w, responseString)
+	ree := strings.Replace(responseString,"<name>Area Of Damage to Vehicle</name>", "<name>Area Of Damage to Vehicle Assessed</name>", 1)
+	fmt.Fprint(w, ree)
 }
 
 
